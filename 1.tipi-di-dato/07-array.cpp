@@ -41,7 +41,7 @@ int main() {
    }
 
    // Un array può essere inizializzato contestualmente alla dichiarazione,
-   // mediante graffe, peraltro non serve specificare la dimenzione poichè sarà
+   // mediante graffe, peraltro non serve specificare la dimensione poichè sarà
    // il compilatore a determinarla verificando il numero degli elementi.
    int arr_new[] = {1,2,3,4,5};
 
@@ -64,6 +64,8 @@ int main() {
       arr2[i] = arr1[i];
       cout << "arr1: " << arr1[i] << " _ " << "arr2: " << arr2[i] << endl;
    }
+
+   // ARRAY MULTIDIMENSIONALI
 
    return(0);
 }
