@@ -2,9 +2,8 @@
 using namespace std;
 
 int main() {
-   /*
-   ARRAY
-   Collezione di oggetti dello stesso tipo.
+   // ARRAY
+   /* Collezione di oggetti dello stesso tipo.
    La dichiarazione prevede un qualificatore di tipo, un identificatore e 
    la dimensione.
    
@@ -18,14 +17,14 @@ int main() {
    a DIM-1.
 
    La dimensione di un array dovrebbe essere dichiarata come un'espressione
-   costante, sia lo Stroustrup sia il Lippman scrivono che se si dichiara la 
+   costante, sia lo Stroustrup sia il Lippman asseriscono che se si dichiara la 
    dimensione di un array come non const si avrà un errore a tempo di 
    compilazione.
    */
    const int buf_size = 20;
    int max_buf = 10;
 
-   int buffer[buf_size];		// Lecito, la dimensione è const
+   int buffer[buf_size];			// Lecito, la dimensione è const
    char *input_file[buf_size - 5];	// Lecito, espressione costante 20-5
    double input_str[max_buf];		// Nessun errore a tempo di compilazione
 
@@ -66,13 +65,12 @@ int main() {
    }
 
    // ARRAY MULTIDIMENSIONALI
-   // Array a due dimensioni caratterizzato da 3 righe e 2 colonne
-   // int arr_multi[3][2]; 
 
    /* Inizializzazione
     * Sono state utilizzate le graffe annidate per rendere più chiara 
     * l'inizializzazione stessa, tuttavia non sono obbligatorie; ad esempio, la
-    * seguente inizializzazione è del tutto equivalente 
+    * seguente inizializzazione e' del tutto equivalente, infatti produce
+	* anch'essa un array a due dimensioni caratterizzato da 3 righe e 2 colonne: 
     * int ia[3][2] ={0,1,2,3,4,5}; 
     */
    const int rowSize = 3;
@@ -83,19 +81,17 @@ int main() {
       {4, 5},		
    };
    
-   /* Inizializzazione del primo elemento di ogni riga; gli altri posti
-    * automaticamente a 0
+   /* Segue l'inizializzazione del primo elemento di ogni riga; gli altri
+	* saranno posti automaticamente a 0
     */
    int arr_multi2[rowSize][colSize] = { {0},{1},{2} };
 
    /* Se non fossero state inserite le graffe sarebbero stati inizializzati i
     * primi 2 elementi della prima riga ed il primo elemento della seconda
     * riga.
-    */
-
-   /*
+	*
 	* L'indicizzazione richiede una coppia di parentesi quadre per ciascuna
-	* dimensione.
+	* dimensione:
 	*/
    int x, y;
    int matrix[rowSize][colSize];
@@ -103,7 +99,43 @@ int main() {
    for (x = 0; x < rowSize; x++) // righe
    	  for (y =0; y< colSize; y++)  // colonne
 	  	 matrix[x][y] = x + y;		// inizializzazione
-   
+ 
+   // ARRAY E INDIRIZZI, A BRACCETTO CON I PUNTATORI
+   /* Essendo un int * (puntatore a intero) le forme seguenti sono
+	* tutte l'un l'altra equivalenti.
+	*/
+   cout << "Indirizzo dell'array" << endl;
+   cout << matrix << endl;
+   cout << &matrix[0]  << endl;
+   cout << *matrix << endl;
+   cout << matrix[0] << endl;
+ 
+   // Per ottenere l'indirizzo dell'elemento 'N' si utilizza l'operatore di
+   // subscript []
+
+   const int N = 3;
+   cout << "Indirizzo dell'elemento <" << N << "> dell'array" << endl;
+   cout << &matrix[N] << endl;
+   cout << matrix+N << endl;
+   cout << *(matrix+N) << endl;
+   cout << matrix[N] << endl;
+
+   /* Ne consegue che un array può essere attraversato sia mediante l'operatore
+	* di subscript sia mediante la manipolazione diretta dei puntatori, come il
+	* seguente:
+	*/
+
+   const int MAX_SIZ = 10;
+   int ar[MAX_SIZ] = {10, 20, 30, 40, 50, 60, 70, 80 , 90, 100};
+   // si fa puntare pbegin al primo elemento dell'array
+   int *pbegin = ar;
+   int *pend = ar + MAX_SIZ;	// limite
+
+   // Ad ogni iterazione del ciclo while pbegin punta all'elemento successivo.
+   while (pbegin != pend) {
+   	  cout << *pbegin << ' ' << endl;
+	  ++pbegin;
+   }
 
    return(0);
 }
