@@ -67,7 +67,7 @@ int main() {
 
    // ARRAY MULTIDIMENSIONALI
    // Array a due dimensioni caratterizzato da 3 righe e 2 colonne
-   int arr_multi[3][2]; 
+   // int arr_multi[3][2]; 
 
    /* Inizializzazione
     * Sono state utilizzate le graffe annidate per rendere più chiara 
@@ -75,21 +75,35 @@ int main() {
     * seguente inizializzazione è del tutto equivalente 
     * int ia[3][2] ={0,1,2,3,4,5}; 
     */
-   int arr_multi[3][2] = {	
+   const int rowSize = 3;
+   const int colSize = 2;
+   int arr_multi[rowSize][colSize] = {	
       {0, 1},		
       {2, 3},		
-      {4, 5};		
+      {4, 5},		
    };
    
    /* Inizializzazione del primo elemento di ogni riga; gli altri posti
     * automaticamente a 0
     */
-   int arr_multi2[3][2] = { {0},{1},{2} };
+   int arr_multi2[rowSize][colSize] = { {0},{1},{2} };
 
    /* Se non fossero state inserite le graffe sarebbero stati inizializzati i
     * primi 2 elementi della prima riga ed il primo elemento della seconda
     * riga.
     */
+
+   /*
+	* L'indicizzazione richiede una coppia di parentesi quadre per ciascuna
+	* dimensione.
+	*/
+   int x, y;
+   int matrix[rowSize][colSize];
+
+   for (x = 0; x < rowSize; x++) // righe
+   	  for (y =0; y< colSize; y++)  // colonne
+	  	 matrix[x][y] = x + y;		// inizializzazione
+   
 
    return(0);
 }
