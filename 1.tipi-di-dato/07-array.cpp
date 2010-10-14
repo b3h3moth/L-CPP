@@ -66,6 +66,30 @@ int main() {
    }
 
    // ARRAY MULTIDIMENSIONALI
+   // Array a due dimensioni caratterizzato da 3 righe e 2 colonne
+   int arr_multi[3][2]; 
+
+   /* Inizializzazione
+    * Sono state utilizzate le graffe annidate per rendere più chiara 
+    * l'inizializzazione stessa, tuttavia non sono obbligatorie; ad esempio, la
+    * seguente inizializzazione è del tutto equivalente 
+    * int ia[3][2] ={0,1,2,3,4,5}; 
+    */
+   int arr_multi[3][2] = {	
+      {0, 1},		
+      {2, 3},		
+      {4, 5};		
+   };
+   
+   /* Inizializzazione del primo elemento di ogni riga; gli altri posti
+    * automaticamente a 0
+    */
+   int arr_multi2[3][2] = { {0},{1},{2} };
+
+   /* Se non fossero state inserite le graffe sarebbero stati inizializzati i
+    * primi 2 elementi della prima riga ed il primo elemento della seconda
+    * riga.
+    */
 
    return(0);
 }
