@@ -78,22 +78,73 @@ int main() {
 	for (index=0; index<svect.size() ; index++) // Si noti l'utilizzo di size
 		cout << svect[index] << endl;
 
-	// A differenza degli array un oggetto vector  puo':
+	// A differenza degli array un oggetto vector puo':
 	// essere inizializzato con un altro vector;
 	// essere copiato in un altro vector.
-	cout << "Copia e inizializzazione vector -> vector" << endl;
+	
+	// STILE STL
+	// Sino ad'ora si e' utilizzato il contenitore vector simulando l'array
+	// predefinito, ora si considerera' invece lo stile STL[2], che prevede, al
+	// posto della definizione di una dimensione come per gli array, la 
+	// creazione di un vector vuoto.
 
 	vector<string> git_rep;
+
+	// Invece di indicizzare l'oggetto vector, si inserisce direttamente un
+	// elemento, questa operazione la si puo'  fare con push_back(), che per
+	// l'appunto inserisce un elemento alla fine di un vector:
 	git_rep.push_back("git@github.com:b3h3moth/L-CPP.git");
-	vector<string> repository(git_rep);
-	vector<string> new_git_rep;
-	new_git_rep = repository;
+
+	vector<string> repository(git_rep); // vector inizializzato con vector
+	vector<string> new_git_rep;			
+	new_git_rep = repository;			// copia un vector in un altro vector
+
+	// Per visualizzare le stringhe all'interno dei relativi vector si potrebbe
+	// tranquillamante iterare i vari elementi mediante l'operatore di 
+	// subscript, (si potrebbe definire come il metodo classico):
+	cout << "Stile STL: iterazione mediante subscript" << endl;
 
 	for (index=0; index<git_rep.size(); index++) {
-		cout << "git_rep:     " << git_rep[index] << endl;
-		cout << "repository:  " << repository[index] << endl;
-		cout << "new_git_rep: " << new_git_rep[index] << endl;
+		cout << "     git_rep: " << git_rep[index] << endl;
+		cout << "  repository: " << repository[index] << endl;
+		cout << " new_git_rep: " << new_git_rep[index] << endl;
 	}
+
+	// Tuttavia e' possibile anche utilizzare gli iteratori restituiti dalle
+	// funzioni begin() ed end() di vector, (si potrebbe definire il metodo
+	// standard o consigliato); un iteratore e' una classe della libreria
+	// standard, fornisce all'oggetto creato - nel caso specifico it - le 
+	// funzionalita' di un puntatore:
+	cout << "iterazione mediante classe iterator" << endl;
+
+	vector<string>::iterator it = git_rep.begin();
+	
+	for ( it; it != git_rep.end(); it++)
+		cout << *it << ' ';
+	cout << endl;
+
+	// PORRE ATTENZIONE A:
+	// 
+	// 1) Non confondere i due stili, ossia quello che simula gli array
+	// predefiniti e quello STL, il primo prevede la dimensione iniziale e di
+	// seguito, o contestualmente, il riempimento degli elementi, il secondo
+	// invece prevede la definizione di un vector vuoto, per poi lavorarlo con
+	// le le funzioni predefinite della classe stessa. Se vogliamo il secondo
+	// metodo e' di gran lunga piu' vicino alla programmazione ad oggetti,
+	// concettualmente s'intende.
+	//
+	// 2) Si tenga bene a mente che l'inserimento in un vector non sovrascrive
+	// ma aggiunge, per cui vale sempre la pena considerare sempre il
+	// numero degli elementi allorquando si lavora con un vector:
+	
+	vector<int> mvect(MAX_SIZE);
+	
+	cout << mvect.size() << endl;
+	
+	for (index = 0; index < MAX_SIZE; index++)
+		mvect.push_back(index);
+
+	cout << mvect.size() << endl;
 
 
 	return(0);
@@ -113,4 +164,8 @@ int main() {
  * Le classi saranno trattare come tipo di dato in questa sezione, ossia in
  * questa directory, e poi utilizzate costantemente in tutte le sorgenti
  * prodotte nel presente repository.
+ *
+ * [2] STL sta per Standard Template Library; sono una collezione di classi
+ * inclusa nella libreria standard del C++, con la peculiorita' che possono
+ * essere gestite con ogni tipo di tapo.
  */
