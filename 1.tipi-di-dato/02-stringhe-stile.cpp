@@ -1,4 +1,6 @@
 #include <iostream>
+// Per lavorare con le stringhe in stile C e' necessario aggiungere l'header 
+// seguente:
 #include <cstring>
 
 using namespace std;
