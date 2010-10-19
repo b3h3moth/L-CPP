@@ -30,7 +30,7 @@ using namespace std;
 
 // Si definisce una classe String, per gestire alcune operazioni sulle stringhe.
 
-Class String;
+class String;
 istream& operator>>(istream&, String&);
 ostream& operator<<(ostream&, const String&);
 
@@ -38,9 +38,9 @@ class String
 {
 	public:
 		// Definizione dei costruttori
-		// Si definiscono 3 costruttori sfruttando l'overloading degli operatori -
-		// letteramente sovraccarico - , ogni istanza infatti e' diversa dall'altra
-		// in base alla lista dei parametri.
+		// Si definiscono 3 costruttori sfruttando l'overloading delle funzioni
+		// - letteralmente sovraccaricamento -, ogni istanza infatti e' diversa 
+		// dall'altra in base alla lista dei parametri.
 		//
 		// String() e' il costruttore di default, non richiede un esplicita
 		// inizializzazione iniziale
@@ -55,20 +55,23 @@ class String
 		// Distruttore
 		~String();
 
-		// L'overloaded di alcuni operatori di assegnamento
-		Stringa& operator=(const String&);
-		Stringa& operator=(const char*);
+		// L'overloading di alcuni operatori di assegnamento
+		String& operator=(const String&);
+		String& operator=(const char*);
 
-		// L'overloaded di alcuni operatori di uguaglianza
+		// L'overloading di alcuni operatori di uguaglianza
 		bool operator==(const String&);
 		bool operator==(const char*);
 
-		// L'overloaded dell'operatore di subscript[]
+		// L'overloading dell'operatore di subscript[]
 		char& operator[](int);
 
-		// Metodi di accesso
+		// Metodi di accesso.
+		// I metodi di una classe, o come accennato precedentemente le funzioni 
+		// membro di una clsse, possono essere definiti sia all'interno sia 
+		// all'esterno della classe stessa.
 		int size() { return _size; };
-		char* c_str() { return _string };
+		char* c_str() { return _string; };
 
 	private:
 		int _size;
@@ -79,4 +82,3 @@ int main() {
 
    return(0);
 }
-
