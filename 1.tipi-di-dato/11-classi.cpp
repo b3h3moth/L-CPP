@@ -36,8 +36,12 @@ class Registro
 		// Costruttore
 		// E' un metodo, solitamente public, con lo stesso nome della classe e
 		// privo del valore di ritorno, il suo scopo e' di inizializzare 
-		// l'oggetto della classe; in mancanza di un costruttore il compilatore
-		// invochera' quello di default.
+		// l'oggetto della classe stessa.
+		// In mancanza di un costruttore il compilatore invochera' quello di 
+		// default; il costrtuttore di default e' caratterizzato dall'assenza di
+		// parametri, puo' essere creato ad-hoc dall'autore della classe oppure
+		// invocato automaticamente dal compilatore, ma solo in assenza di altri
+		// costruttori.
 		Registro(string corso)
 		{
 			DefinizioneNomeCorso(corso);
