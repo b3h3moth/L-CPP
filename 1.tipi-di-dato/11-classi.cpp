@@ -13,15 +13,12 @@
  class NuovaClasse
  {
   public:
-
              // Contiene i metodi della classe o funzioni membro.
              // L'interfaccia pubblica, ovvero le operazioni con cui un utente
 			 // puo' interagire con l'oggetto della classe.
      
   private:
-
              // I dati, non accessibili dall'esterno della classe.
-
  };
 
 */
@@ -32,9 +29,22 @@ using namespace std;
 // Definizione della classe Registro
 class Registro
 { 
-	public:
+	public:		// Dall'esterno della classe possono essere utilizzati solo i
+				// metodi pubblici, che stanno ad indicare l'interfaccia 
+				// pubblica della classe.
+
+		// Costruttore
+		// E' un metodo, solitamente public, con lo stesso nome della classe e
+		// privo del valore di ritorno, il suo scopo e' di inizializzare 
+		// l'oggetto della classe; in mancanza di un costruttore il compilatore
+		// invochera' quello di default.
+		Registro(string corso)
+		{
+			DefinizioneNomeCorso(corso);
+		}
 		
 		// Metodo: Settaggio del nome del corso
+		// Funzioni mutators: poiche' modificano i valori
 		void DefinizioneNomeCorso(string corso)
 		{
 			nomeCorso = corso;
@@ -42,6 +52,7 @@ class Registro
 		}
 
 		// Metodo: Lettura del nome del corso
+		// Funzioni accessors: poiche' leggono i dati
 		string VisualizzazioneCorso()
 		{
 			return nomeCorso;
@@ -56,7 +67,12 @@ class Registro
 	private:	// Tutto cio' che e' dichiarato dopo lo specificatore d'accesso 
 				// private e' visibile solo dai metodi della sezione public, e
 				// quindi non e' visibile all'esterno della classe stessa, 
-				// fatte le dovute eccezioni naturalmente.
+				// fatte le dovute eccezioni naturalmente - come friend -.
+				//
+				// Quindi, i membri private di una classe possono essere
+				// utilizzati solo dai metodi o dalle funzioni membro della 
+				// classecstessa.
+				//
 				// Questo modo di 'nascondere' i dettagli implementativi e' un
 				// concetto estremamente iomportante: *information hiding*.
 		
@@ -68,14 +84,12 @@ class Registro
 int main() {
 
 	// Creazione di un oggetto della classe Registro
-	Registro registro;
+	Registro registroA("Linguaggio C++");
+	Registro registroB("Object Oriented Programming");
 
-	cout << "Corso iniziale: " << registro.VisualizzazioneCorso() << "!" << endl;
-	registro.DefinizioneNomeCorso("C++");
-	registro.MessaggioBenvenuto();
-
-
+	// Come si puo' notare ciascun oggetto conserva una copia del dato membro
+	cout << "A " << registroA.VisualizzazioneCorso() << endl;
+	cout << "B " << registroB.VisualizzazioneCorso() << endl;
 
    return(0);
 }
-
