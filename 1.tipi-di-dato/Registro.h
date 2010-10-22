@@ -1,3 +1,6 @@
+#ifndef REGISTRO_H
+#define REGISTRO_H
+
 #include <iostream>
 using namespace std;
 
@@ -17,6 +20,8 @@ class Registro
 		// Dati membro
 		string nomeCorso;
 };
+
+#endif
 
 /* Il file di intestazione, con estensione .h, specifica i servizi che un 
  * client potra' utilizzare sulla classe, raccoglie tutti i metodi dichiarati
