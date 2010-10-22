@@ -101,6 +101,8 @@ int main() {
 }
 
 /* Sin'ora si e' pensato soltanto alle regole generali per la scrittura di una
- * classe, il presente codice ora verra' suddiviso in file distinti in modo tale
- * da dividere l'interfaccia dall'implementazione
+ * classe, il presente codice sara' suddiviso in file distinti in modo tale da
+ * dividere l'interfaccia dall'implementazione, pertanto si faccia riferimento
+ * ai file Registro.cpp e Registro.h, rispettivamente implementazione e 
+ * definizione della classe Registro.
  */
