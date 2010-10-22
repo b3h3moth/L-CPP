@@ -51,8 +51,10 @@ class Registro
 		// Funzioni mutators: poiche' modificano i valori
 		void DefinizioneNomeCorso(string corso)
 		{
-			nomeCorso = corso;
-
+			if (corso.length() > 30)
+				nomeCorso = corso.substr(0, 30);
+			else
+				nomeCorso = corso;
 		}
 
 		// Metodo: Lettura del nome del corso
@@ -89,7 +91,7 @@ int main() {
 
 	// Creazione di un oggetto della classe Registro
 	Registro registroA("Linguaggio C++");
-	Registro registroB("Object Oriented Programming");
+	Registro registroB("Corso di: Object Oriented Programming linguaggio C++");
 
 	// Come si puo' notare ciascun oggetto conserva una copia del dato membro
 	cout << "A " << registroA.VisualizzazioneCorso() << endl;
