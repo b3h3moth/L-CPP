@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 
+	// Si testa la classe Registro mediante la creazione di due oggetti
 	Registro registroA("C++ Language Programming");
 	Registro registroB("Corso di: Object Oriented Programming");
 	registroA.MessaggioBenvenuto();
