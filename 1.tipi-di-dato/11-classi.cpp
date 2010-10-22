@@ -89,7 +89,7 @@ class Registro
 
 int main() {
 
-	// Creazione di un oggetto della classe Registro
+	// Creazione di oggetti della classe Registro
 	Registro registroA("Linguaggio C++");
 	Registro registroB("Corso di: Object Oriented Programming linguaggio C++");
 
@@ -99,3 +99,8 @@ int main() {
 
    return(0);
 }
+
+/* Sin'ora si e' pensato soltanto alle regole generali per la scrittura di una
+ * classe, il presente codice ora verra' suddiviso in file distinti in modo tale
+ * da dividere l'interfaccia dall'implementazione
+ */
