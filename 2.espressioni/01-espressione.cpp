@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-	/*
+	/* ESPRESSIONI
+	 *
 	 * Un espressione, solitamente, e' caratterizata da uno o piu' operandi e
 	 * naturalmente da una operazione da applicare agli operandi stessi.
 	 *
