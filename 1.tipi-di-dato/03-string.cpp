@@ -40,7 +40,7 @@ int main() {
    const char *p = ", ";
    string s1("hello");
    string s2("world");
-   string s3 = s1 + p + s2 + "\n";
+   string s3 = s1 + p + s2 + '\n';
    cout << s3 << endl;
  
    string str1;
@@ -51,7 +51,7 @@ int main() {
    const char *str = s3.c_str();	// Conversione corretta: string -> C
    cout << str << endl;
 
-   string str2("luca.suriano@cryptolab.net");
+   string str2("nome.cognome@mio.host.org");
    int i, size;
    size = str2.size();
 
