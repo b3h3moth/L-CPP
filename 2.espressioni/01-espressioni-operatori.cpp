@@ -114,7 +114,7 @@ int main() {
 		// Operatore di decremento -- Toglie 1
 		++var_a; // prefisso
 		--var_b;
-		var_c++; //suffisso
+		var_c++; // suffisso
 		var_a--;
 		var_b--;
 		cout << "var_a: " << var_a << " var_b: " << var_b << " var_c: "<< var_c << endl;
