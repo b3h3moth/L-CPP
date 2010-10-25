@@ -12,8 +12,8 @@ int main() {
 
    cout << "stringa1: \""<< stringa1 <<"\"" << " di lunghezza " << stringa1.size() << endl;
    
-   // Verifica se la stringa è vuota; restituisce true se la stringa non ha
-   // caratteru, false altrimenti
+   // Verifica se la stringa è vuota; restituisce true se e' effettivamente
+   // vuota, false altrimenti
    if (stringa2.empty())
       cout << "Stringa2 vuota" << endl;
 
