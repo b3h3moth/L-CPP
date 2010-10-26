@@ -2,20 +2,35 @@
 using namespace std;
 
 #include <vector>
+#include <list>
+#include <map>
+
+// CONTENITORI (Container)
+// Sono classi che possono contenere gruppi eterogenei di oggetti.
+//
+// Saranno esaminati:
+// Vector
+// List
+// Map
 
 int main() {
 	int index;
 
-	// VECTOR 
-	// (necessario l'header #include <vector>
+	/*
+	 * VECTOR
+	 *
+	 * Intestazione da aggiungere:
+	 * #include <vector>
+	 */
 	// La classe vector altro non e' che una alternativa all'array predefinito;
 	// puo' essere utilizzato con due stili ben definiti:
 	// 1) Imitare l'array predefinito;
 	// 2) STL.
 	
+	const int MAX_SIZE = 5;
+	
 	// (1) Imitare l'array predefinito
 	// La somiglianza con l'array e' evidente.
-	const int MAX_SIZE = 5;
 	
 	// Dichiaro un contenitore vector di 10 interi:
 	vector<int> vec(MAX_SIZE);
@@ -146,6 +161,27 @@ int main() {
 
 	cout << mvect.size() << endl;
 
+	/*
+	 * LIST
+	 * 
+	 * Intestazione da aggiungere:
+	 * #include <list>
+	 *
+	 * Ricerca bidirezionale
+	 */
+
+
+	list<string> indirizzi_mail;
+
+	/*
+	 * MAP
+	 *
+	 * Intestazione da includere:
+	 * #include <map>
+	 */
+	map<string, int> rubrica;
+	rubrica["Marilena"];
+	cout << rubrica[0] << endl;
 
 	return(0);
 }
@@ -153,7 +189,7 @@ int main() {
 /* NOTE:
  * [1] Al momento si deve ancora affrontare lo studio delle classi, tuttavia 
  * gia' e' stato accennato un futuro concetto fondamentale al fine della
- * comprensione delle classi stesse; nell'esempio ho citato la parola
+ * comprensione delle classi stesse; nell'esempio e' stata citata la parola
  * 'scavalcare' in relazione ai costruttori, bene, e' sufficiente per il momento
  * essere a conoscenza che una funzione, pur mantenendo, il medesimo
  * identificativo, puo' essere riscritta utilizzando parametri formali 
@@ -161,9 +197,9 @@ int main() {
  * al costruttore di default, altri metodi di inizializzazione, sfruttando per
  * l'appunto questa tecnica.
  *
- * Le classi saranno trattare come tipo di dato in questa sezione, ossia in
- * questa directory, e poi utilizzate costantemente in tutte le sorgenti
- * prodotte nel presente repository.
+ * Le classi saranno trattate come tipo di dato in questa sezione in maniera
+ * molto generica, ma quanto basta per poter proseguire con lo studio delle
+ * sezioni successive.
  *
  * [2] STL sta per Standard Template Library; sono una collezione di classi
  * inclusa nella libreria standard del C++, con la peculiorita' che possono
