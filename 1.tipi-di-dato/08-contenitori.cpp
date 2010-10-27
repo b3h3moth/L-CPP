@@ -22,15 +22,31 @@ int main() {
 	 *
 	 * Intestazione da aggiungere:
 	 * #include <vector>
+	 *
+	 * Un vector e' una sequenza che supporta accessi random agli elementi, la
+	 * gestione della memoria e' automatica; il tempo per inserire o cancellare
+	 * ciascun elemento dalla fine della sequenza e' costante, mentre e' lineare
+	 * se l'inserimento o la cancellazione di un elemento avviene all'inizio o
+	 * nel mezzo della sequenza stessa. 
+	 *
+	 * Il numero degli elementi in un vector puo' variare dinamicamente.
+	 
+
+	 * Se si volesse banalizzare il concetto, o meglio, se si volesse rendere
+	 * il discorso molto piu' semplice, nulla risulterebbe errato se si
+	 * definisse la classe vector come una alternativa molto efficiente 
+	 * all'array predefinito.
+	 *
+	 * Un vector puo' essere implementato mediante due stili ben definiti:
+	 * 1) Imitando l'array predefinito;
+	 * 2) Utilizzando lo stile e la tecnica propria della STL.
+	 *
+	 * Saranno analizzati entrambi.
 	 */
-	// La classe vector altro non e' che una alternativa all'array predefinito;
-	// puo' essere utilizzato con due stili ben definiti:
-	// 1) Imitare l'array predefinito;
-	// 2) STL.
 	
 	const int MAX_SIZE = 5;
 	
-	// (1) Imitare l'array predefinito
+// (1) Implementare un vector imitando l'array predefinito
 	// La somiglianza con l'array e' evidente.
 	
 	// Dichiaro un contenitore vector di 10 interi:
@@ -50,7 +66,7 @@ int main() {
 
 	// E' possibile utilizzare alcune funzioni per verificare sia la dimensione
 	// sia la possibilita' che sia vuoto, size() ed empty() rispettivamente:
-	cout << "size() empty()" << endl;
+	cout << "\nsize() empty()" << endl;
 	
 	if (vec.empty())	// Restituisce true se vuoto
 		cout << "vec: VUTO" << endl;	
@@ -63,7 +79,7 @@ int main() {
 	// tuttavia e' possibile scavalcare[1] - le note sono a pie' di pagina - il 
 	// costruttore di default definendo uno specifico valore per tutti gli 
 	// elementi:
-	cout << "Oltre il ... costruttore di default" << endl;
+	cout << "\nOltre il ... costruttore di default" << endl;
 	
 	vector<int> nvect(MAX_SIZE, 9);
 
@@ -78,7 +94,7 @@ int main() {
 	// Per far questo, si deve inserire l'indirizzo di partenza da cui iniziare
 	// a copiare gli elementi e l'indirizzo successivo all'ultimo elmento da 
 	// copiare, con un esempio sara' tutto molto piu' chiaro:
-	cout << "Copia di array o parti di esso in un oggetto vector..." << endl;
+	cout << "\nCopia di array o parti di esso in un oggetto vector..." << endl;
 	
 	int iarr[MAX_SIZE+5] = {100,200,300,400,500,600,700,800,900,1000};
 	vector<int> ivect(iarr, iarr+5);
@@ -98,7 +114,7 @@ int main() {
 	// essere inizializzato con un altro vector;
 	// essere copiato in un altro vector.
 	
-	// STILE STL
+// (2) Implementare un vector secondo lo stile proprio della STL
 	// Sino ad'ora si e' utilizzato il contenitore vector simulando l'array
 	// predefinito, ora si considerera' invece lo stile STL[2], che prevede, al
 	// posto della definizione di una dimensione come per gli array, la 
@@ -118,7 +134,7 @@ int main() {
 	// Per visualizzare le stringhe all'interno dei relativi vector si potrebbe
 	// tranquillamante iterare i vari elementi mediante l'operatore di 
 	// subscript, (si potrebbe definire come il metodo classico):
-	cout << "Stile STL: iterazione mediante subscript" << endl;
+	cout << "\nStile STL: iterazione mediante subscript" << endl;
 
 	for (index=0; index<git_rep.size(); index++) {
 		cout << "     git_rep: " << git_rep[index] << endl;
@@ -131,7 +147,7 @@ int main() {
 	// standard o consigliato); un iteratore e' una classe della libreria
 	// standard, fornisce all'oggetto creato - nel caso specifico it - le 
 	// funzionalita' di un puntatore:
-	cout << "iterazione mediante classe iterator" << endl;
+	cout << "\niterazione mediante classe iterator" << endl;
 
 	vector<string>::iterator it = git_rep.begin();
 	
@@ -152,7 +168,7 @@ int main() {
 	// 2) Si tenga bene a mente che l'inserimento in un vector non sovrascrive
 	// ma aggiunge, per cui vale sempre la pena considerare sempre il
 	// numero degli elementi allorquando si lavora con un vector:
-	cout << "vector size()" << endl;
+	cout << "\nvector size()" << endl;
 
 	vector<int> mvect(MAX_SIZE);
 	
@@ -172,10 +188,10 @@ int main() {
 	 * E' una lista doppiamente concatenata, bidirezionale, ciascun nodo e' 
 	 * allocato automaticamente ed ha a disposizione 2 puntatori, uno che 
 	 * punta al nodo precedente l'altro che punta al nodo successivo; 
-	 * e' possibile inserire ed eliminare elementi molto
-	 * velocemente, cosi' come scorrere l'intera lista.
+	 * e' possibile inserire ed eliminare elementi molto velocemente, cosi' 
+	 * come scorrere l'intera lista.
 	 */
-	cout << "list<int> LISTA;" << endl;
+	cout << "\nlist<int> LISTA;" << endl;
 
 	list<int> LISTA;
 
@@ -196,21 +212,32 @@ int main() {
 		cout << *i << " ";
 	cout << endl;
 
-
-	for(i = LISTA.begin(); i != LISTA.end(); ++i)
-		cout << *i << " ";
-	cout << endl;
-
-	cout << LISTA.sort() << endl;
-
+	cout << "\nLista.size(): " << LISTA.size() << endl;
 
 	/*
 	 * MAP
 	 *
 	 * Intestazione da includere:
 	 * #include <map>
+	 *
+	 * E' un container associativo ordinato, in cui possono essere posti in
+	 * relazione due tipi di dato diversi, detto ancor piu' semplicemente e' un
+	 * contenitore di coppie di valori.
 	 */
-	map<string, int> rubrica;
+	cout << "\nmap<int, string> MAP" << endl;
+
+	map<int, string> MAP;
+
+	// Si utilizza l'operatore di subscript per assegnare elementi
+	MAP[123567] = "C++";
+	MAP[678677] = "C";
+	MAP[789435] = "Perl";
+	MAP[291878] = "Python";
+	MAP[298327] = "Lisp";
+	MAP[123478] = "Unix Shell Scripting";
+
+	cout << "MAP[123567]: " << MAP[123567] << endl;
+	cout << "MAP.size() : " << MAP.size() << endl;
 
 	return(0);
 }
