@@ -266,7 +266,7 @@ int main() {
  * sezioni successive.
  *
  * [2] STL sta per Standard Template Library; sono una collezione di classi
- * inclusa nella libreria standard del C++, con la peculiarita' che possono
- * essere gestite con ogni tipo di tapo; e' importantissimo ed essenziale
+ * incluse nella libreria standard del C++, con la peculiarita' che possono
+ * essere gestite con ogni tipo di dato; e' importantissimo ed essenziale
  * per un programmatore C++ sfruttare a fondo tale libreria.
  */
