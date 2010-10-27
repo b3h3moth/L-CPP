@@ -4,6 +4,7 @@ using namespace std;
 #include <vector>
 #include <list>
 #include <map>
+#include <iterator>
 
 // CONTENITORI (Container)
 // Sono classi che possono contenere gruppi eterogenei di oggetti.
@@ -151,7 +152,8 @@ int main() {
 	// 2) Si tenga bene a mente che l'inserimento in un vector non sovrascrive
 	// ma aggiunge, per cui vale sempre la pena considerare sempre il
 	// numero degli elementi allorquando si lavora con un vector:
-	
+	cout << "vector size()" << endl;
+
 	vector<int> mvect(MAX_SIZE);
 	
 	cout << mvect.size() << endl;
@@ -167,11 +169,40 @@ int main() {
 	 * Intestazione da aggiungere:
 	 * #include <list>
 	 *
-	 * Ricerca bidirezionale
+	 * E' una lista doppiamente concatenata, bidirezionale, ciascun nodo e' 
+	 * allocato automaticamente ed ha a disposizione 2 puntatori, uno che 
+	 * punta al nodo precedente l'altro che punta al nodo successivo; 
+	 * e' possibile inserire ed eliminare elementi molto
+	 * velocemente, cosi' come scorrere l'intera lista.
 	 */
+	cout << "list<int> LISTA;" << endl;
+
+	list<int> LISTA;
+
+	LISTA.push_back(100);			// Aggiunto alla fine
+	LISTA.push_front(10);			// Aggiunto all'inizio
+	LISTA.insert(LISTA.begin(), 2);	// Aggiunto all'inizio
+	LISTA.insert(LISTA.end(), 33);	// Aggiunto alla fine
+	LISTA.push_back(80);			// Aggiunto alla fine	
+	LISTA.push_back(90);			// Aggiunto alla fine
+	// Aggiunto all'inizio dopo 1 elemento, diventa secondo della lista
+	LISTA.insert(++LISTA.begin(), 44);	
+	// Aggiunto 1 elemento dopo la fine, ovvero diventa primo
+	LISTA.insert(++LISTA.end(), 55);
+
+	list<int>::iterator i;
+
+	for(i = LISTA.begin(); i != LISTA.end(); ++i)
+		cout << *i << " ";
+	cout << endl;
 
 
-	list<string> indirizzi_mail;
+	for(i = LISTA.begin(); i != LISTA.end(); ++i)
+		cout << *i << " ";
+	cout << endl;
+
+	cout << LISTA.sort() << endl;
+
 
 	/*
 	 * MAP
@@ -180,13 +211,12 @@ int main() {
 	 * #include <map>
 	 */
 	map<string, int> rubrica;
-	rubrica["Marilena"];
-	cout << rubrica[0] << endl;
 
 	return(0);
 }
 
 /* NOTE:
+ *
  * [1] Al momento si deve ancora affrontare lo studio delle classi, tuttavia 
  * gia' e' stato accennato un futuro concetto fondamentale al fine della
  * comprensione delle classi stesse; nell'esempio e' stata citata la parola
@@ -202,6 +232,6 @@ int main() {
  * sezioni successive.
  *
  * [2] STL sta per Standard Template Library; sono una collezione di classi
- * inclusa nella libreria standard del C++, con la peculiorita' che possono
+ * inclusa nella libreria standard del C++, con la peculiarita' che possono
  * essere gestite con ogni tipo di tapo.
  */
