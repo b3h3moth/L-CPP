@@ -57,7 +57,7 @@ int main() {
 	
 	// L'operatore di subscript [] naturalmente e' lecito per accedere agli
 	// elementi:
-	cout << "Operatore di subscript []" << endl;
+	cout << " ### Operatore di subscript []" << endl;
 
 	for (index = 0; index < MAX_SIZE; index++) {
 		vec[index] = arr[index];
@@ -66,10 +66,10 @@ int main() {
 
 	// E' possibile utilizzare alcune funzioni per verificare sia la dimensione
 	// sia la possibilita' che sia vuoto, size() ed empty() rispettivamente:
-	cout << "\nsize() empty()" << endl;
+	cout << "\n ### size() empty()" << endl;
 	
 	if (vec.empty())	// Restituisce true se vuoto
-		cout << "vec: VUTO" << endl;	
+		cout << "vec: VUOTO" << endl;	
 	else
 		cout << "vec: caratterizzato da " << vec.size() << " elementi" << endl;
 
@@ -79,7 +79,7 @@ int main() {
 	// tuttavia e' possibile scavalcare[1] - le note sono a pie' di pagina - il 
 	// costruttore di default definendo uno specifico valore per tutti gli 
 	// elementi:
-	cout << "\nOltre il ... costruttore di default" << endl;
+	cout << "\n ### Oltre il ... costruttore di default" << endl;
 	
 	vector<int> nvect(MAX_SIZE, 9);
 
@@ -94,7 +94,8 @@ int main() {
 	// Per far questo, si deve inserire l'indirizzo di partenza da cui iniziare
 	// a copiare gli elementi e l'indirizzo successivo all'ultimo elmento da 
 	// copiare, con un esempio sara' tutto molto piu' chiaro:
-	cout << "\nCopia di array o parti di esso in un oggetto vector..." << endl;
+	cout << "\n ### Copia di array o parti di esso in un oggetto vector..." <<
+		endl;
 	
 	int iarr[MAX_SIZE+5] = {100,200,300,400,500,600,700,800,900,1000};
 	vector<int> ivect(iarr, iarr+5);
@@ -134,7 +135,7 @@ int main() {
 	// Per visualizzare le stringhe all'interno dei relativi vector si potrebbe
 	// tranquillamante iterare i vari elementi mediante l'operatore di 
 	// subscript, (si potrebbe definire come il metodo classico):
-	cout << "\nStile STL: iterazione mediante subscript" << endl;
+	cout << "\n ### Stile STL: iterazione mediante subscript" << endl;
 
 	for (index=0; index<git_rep.size(); index++) {
 		cout << "     git_rep: " << git_rep[index] << endl;
@@ -147,7 +148,7 @@ int main() {
 	// standard o consigliato); un iteratore e' una classe della libreria
 	// standard, fornisce all'oggetto creato - nel caso specifico it - le 
 	// funzionalita' di un puntatore:
-	cout << "\niterazione mediante classe iterator" << endl;
+	cout << "\n ### iterazione mediante classe iterator" << endl;
 
 	vector<string>::iterator it = git_rep.begin();
 	
@@ -168,7 +169,7 @@ int main() {
 	// 2) Si tenga bene a mente che l'inserimento in un vector non sovrascrive
 	// ma aggiunge, per cui vale sempre la pena considerare sempre il
 	// numero degli elementi allorquando si lavora con un vector:
-	cout << "\nvector size()" << endl;
+	cout << "\n ### vector size()" << endl;
 
 	vector<int> mvect(MAX_SIZE);
 	
@@ -191,7 +192,7 @@ int main() {
 	 * e' possibile inserire ed eliminare elementi molto velocemente, cosi' 
 	 * come scorrere l'intera lista.
 	 */
-	cout << "\nlist<int> LISTA;" << endl;
+	cout << "\n ### list<int> LISTA;" << endl;
 
 	list<int> LISTA;
 
@@ -212,7 +213,7 @@ int main() {
 		cout << *i << " ";
 	cout << endl;
 
-	cout << "\nLista.size(): " << LISTA.size() << endl;
+	cout << "\n### Lista.size(): " << LISTA.size() << endl;
 
 	/*
 	 * MAP
@@ -224,11 +225,13 @@ int main() {
 	 * relazione due tipi di dato diversi, detto ancor piu' semplicemente e' un
 	 * contenitore di coppie di valori.
 	 */
-	cout << "\nmap<int, string> MAP" << endl;
+	cout << "\n### map<int, string> MAP" << endl;
 
 	map<int, string> MAP;
 
-	// Si utilizza l'operatore di subscript per assegnare elementi
+	// Si utilizza l'operatore di subscript e l'operatore di assegnamento per
+	// creare la relazione tra, in questo caso, un tipo int e un tipo string;
+	// non e' necessario inserirli in un ordine prestabilito.
 	MAP[123567] = "C++";
 	MAP[678677] = "C";
 	MAP[789435] = "Perl";
@@ -238,6 +241,10 @@ int main() {
 
 	cout << "MAP[123567]: " << MAP[123567] << endl;
 	cout << "MAP.size() : " << MAP.size() << endl;
+
+	map<int, string>::iterator iter;
+	for(iter = MAP.begin(); iter != MAP.end(); iter++)
+		cout << (*iter).first << " -> " << (*iter).second << endl;
 
 	return(0);
 }
@@ -260,5 +267,6 @@ int main() {
  *
  * [2] STL sta per Standard Template Library; sono una collezione di classi
  * inclusa nella libreria standard del C++, con la peculiarita' che possono
- * essere gestite con ogni tipo di tapo.
+ * essere gestite con ogni tipo di tapo; e' importantissimo ed essenziale
+ * per un programmatore C++ sfruttare a fondo tale libreria.
  */
