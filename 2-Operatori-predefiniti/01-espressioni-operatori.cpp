@@ -125,6 +125,25 @@ int main() {
 		cout << ((var_a > var_b) ? true : false) << endl;
 		cout << ((var_b > var_a) ? true : false) << endl;
 
+		// OPERATORE DI SERIALIZZAZIONE , (o operatore virgola)
+		// Il lavoro dell'operatore virgola è di far sì che diverse espressioni,
+		// siano valutate da sinistra a destra, il risultato ed anche il tipo
+		// corrisponde con l'espressione più a destra della lista; un caso
+		// tipico di utilizzo è mediante un ciclo for, oppure con l'operatore
+		// condizionale.
+		
+		// Da noare il valore delle variabili, se non fossero state inserite tra
+		// parentesi il compilatore si sarebbe lamentato, poichè ci sarebbero 
+		// stati due o piu' argomenti, aggiungendo le parentesi invece si
+		// lavoreraì con un singolo argomento. 
+		//
+		// Si noti, infine, come l'operatore di serializzazione assegnera', alle
+		// variabili da inizializzare, sempre l'espressione alla estremità 
+		// destra.
+		int var_opser_a = (10, -17);
+		double var_opser_b = (-89.10, var_opser_a, 10.9);
+		cout << "Variabile intera: " << var_opser_a << "\nVariabile double: " 
+			<< var_opser_b << endl;
 
 		return(0);
 }
