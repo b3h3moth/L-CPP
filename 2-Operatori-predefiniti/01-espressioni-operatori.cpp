@@ -25,7 +25,7 @@ int main() {
 	int number = 5 * 8;       		// Operatore di moliplicazione
 	punt = &number;            		// Operatore di indirizzo
 
-	// Espressione composta quando due o piu' operatori sono combinati
+	// Espressione composta: quando due o piu' operatori sono combinati
 	if (number != 0 && *punt != 0)
 		;
 
@@ -51,22 +51,22 @@ int main() {
 
         int var = 5, var1 = 10, var2 = 22;
         
-        // Operatore somma
+        // OPERATORE SOMMA
 		int var3 = var1 + var2;
         
-        // Operatore sottrazione
+        // OPERATORE SOTTRAZIONE
         int var4 = var3 - var2;
         
-        // Operatore moltiplicazione
+        // OPERATORE MOLTIPLICAZIONE
 		int var5 = var1 * var2;
         
-        // Operatore divisione
+        // OPERATORE DIVISIONE
         // Il risultato della divisione tra due interi dara' un intero, qualora il
         // quoziente contenesse una parte frazionaria, sara' troncata.
         
 		int var6 = var2 / var1;
         
-        // Operatore resto o modulo
+        // OPERATORE RESTO (o modulo)
         // Calcola il resto della divisione tra interi, applicabile solo a:
         // short; int; long; char.
         
@@ -119,11 +119,12 @@ int main() {
 		var_b--;
 		cout << "var_a: " << var_a << " var_b: " << var_b << " var_c: "<< var_c << endl;
 
-		// Operatore condizionale
+		// OPERATORE CONDIZIONALE
 		// expr ? expr2 : expr3
 		// Se expr e' vera ritorna expr2, se falsa expr3
 		cout << ((var_a > var_b) ? true : false) << endl;
 		cout << ((var_b > var_a) ? true : false) << endl;
+
 
 		return(0);
 }
