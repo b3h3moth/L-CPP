@@ -5,6 +5,7 @@ void caso3(double expr);
 double caso4(int expr1, int expr2);
 
 int main() {
+
 	// CONVERSIONI DI TIPO
 	//
 	// Il C++ consente la conversione di operandi ad un tipo comune, tale
@@ -13,7 +14,9 @@ int main() {
 	// e' sempre di promuovere il tipo piu' piccolo al tipo piu' grande,
 	// evitando in tal modo la perdita di precisione.
 	
+	///////////////////////////////////////////////////////////////////////////
 	// CONVERSIONE IMPLICITA (gestita automaticamente dal compilatore)
+	///////////////////////////////////////////////////////////////////////////
 	
 	// (Caso 1) Espressione aritmetica con tipi differenti.
 	// Il tipo piu' piccolo sara' convertito al tipo piu' grande; nel caso
@@ -58,8 +61,54 @@ int main() {
 	
 	cout << "sizeof(expr di ritorno): " << sizeof(caso4(int_var1, int_var2)) 
 		 << " byte (double)" << endl;
+	
 	cout << "      Confronto con int: " << sizeof(int_var1) 
 		 << " byte (int)" << endl;
+
+	// (Conversioni aritmetiche), esse assicurano che gli operandi di un
+	// operatore binario, quali possono essere l'operatore di moltiplicazione o
+	// di somma, vengano promossi ad un tipo di dato comune; le regole generali
+	// sono:
+	//  I) Il tipo di dato e' sempre promosso ad un tipo piu' ampio per evitare
+	// perdita di precisione;
+	// II) Le espressioni con tipi di interi piu' piccoli rispetto ad un intero
+	// saranno promossi ad intero ancor prima della valutazione.
+	//
+	// Il tipo di dato predefinito piu' ampio e' il long double.
+	cout << "\nConversioni aritmetiche" << endl;
+
+	long double ld_var = 9;
+	double d_var = 9.10;
+	float f_var = 9.80;
+	int i_var = 10000;
+	char c_var = 'c';
+	signed char sc_var = 's';
+	unsigned char uc_var = 'u';
+	short int s_int_var = -3;
+	unsigned short ush_var = 3;
+
+	cout << "<double> promosso in: <long double>: " << sizeof(ld_var + d_var) 
+		 << "byte  " << ld_var + d_var << endl;
+
+	// Se ci fosse stato il long double, nell'esempio seguente,  sarebbero stati
+	// promossi a long double; il concetto e' il medesimo per tutti gli altri 
+	// tipi di dato di minore ampiezza rispetto al double e long double.
+	//
+	cout << "<float> <int> promossi <double> prima della valutazione: "
+		 << sizeof(d_var + i_var + f_var) << "byte " << d_var + i_var + f_var 
+		 << endl;
+
+	cout << "<int> <char> promossi <float> prima della valutazione: " 
+		 << sizeof(i_var + f_var + c_var) << "byte " << i_var + f_var + c_var 
+		 << endl;
+
+	// Promozione intera, alcune regole:
+	// - char, signed char, unisgned char, short int sono promossi ad int;
+	// - unsigned short int promosso int se supportato dalla macchina;
+	
+	cout << "<char> <signed char> <unsigned char> <short int> promossi <int>: "
+		 << sizeof(c_var + sc_var + uc_var + s_int_var)  << "byte " 
+		 << c_var + sc_var + uc_var + s_int_var << endl; 
 	
 	return(0);
 }
