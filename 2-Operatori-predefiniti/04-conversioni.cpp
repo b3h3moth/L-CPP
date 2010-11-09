@@ -111,10 +111,40 @@ int main() {
 		 << c_var + sc_var + uc_var + s_int_var << endl; 
 	
 	///////////////////////////////////////////////////////////////////////////
-	// CONVERSIONE ESPLICITA
+	// CONVERSIONE ESPLICITA (Cast)
 	///////////////////////////////////////////////////////////////////////////
-	// todo
+	// Il cast e' una conversione esplicita, supporta i seguenti operatori:
+	// - static_cast
+	// - dynamic_cast
+	// - const_cast
+	// - reinterpret_cast
 	//
+	// La forma generale del cast e' la seguente:
+	// operatore-cast<tipo>(expr)
+	//
+	// operatore di cast: uno tra gli operatori di cast
+	//            <tipo>: il tipo di dato in cui convertire
+	//            (expr): il valore dell'espressione da convertire
+	
+	// (Caso 1) Sostituzione delle normali conversioni implicite standard.
+	// Nel caso specifico, al fine di evitare l'eventuale promozione della 
+	// variabile di tipo int in una di tipo double, per poi essere troncata,
+	// si usa il cast.
+	cout << "\nConversioni esplicite (Cast)" << endl;
+	
+	double var_dbl = 28.980;
+	int var_int = 13;
+
+	// La variabile di tipo double viene esplicitamente convertita in un tipo
+	// intero.
+	var_int += static_cast<int>(var_dbl);
+	var_int += var_dbl;
+
+	cout << sizeof(var_int) << " byte" << var_int << endl;
+
+	// (Caso 2) Si utilizza il cast in quelle situazioni in cue possono essere
+	// gestite diverse conversioni di tipo.
+	
 	return(0);
 }
 
