@@ -163,11 +163,11 @@ int main() {
 		///////////////////////////////////////////////////////////////////////
 		cout << "\nGli operatori in alto hanno la precedenza verso quelli in basso\n" << endl;
 		cout << "   OPERATORE     " << "          FUNZIONE                     " << "     USO" << endl;
-		cout << "-----------------" << "---------------------------------------" << "-----------------------------" << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
 		cout << "::               " << " scopo globale                         " << " ::nome" << endl;
 		cout << "::               " << " scopo di classe                       " << " classe::nome" << endl;
 		cout << "::               " << " scopo di namespace                    " << " namespace::nome" << endl;
-		cout << "-----------------" << "---------------------------------------" << "-----------------------------" << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
 		cout << ".                " << " seletori di membro                    " << " oggetto.membro" << endl;
 		cout << "->               " << " seletori di membro                    " << " puntatore->membro" << endl;
 		cout << "[]               " << " subscript                             " << " variabile[expr]" << endl;
@@ -181,7 +181,7 @@ int main() {
 		cout << "dynamic_cast     " << " conversione di tipo                   " << " dynamic_cast<tipo>(expr)" << endl;
 		cout << "reinterpret_cast " << " conversione di tipo                   " << " reinterpret_cast<tipo>(expr)" << endl;
 		cout << "static_cast      " << " conversione di tipo                   " << " static_cast<tipo>(expr)" << endl;
-		cout << "-----------------" << "---------------------------------------" << "-----------------------------" << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
 		cout << "sizeof           " << " dimensione oggetto                    " << " sizeof expr" << endl;
 		cout << "sizeof           " << " dimensione tipo                       " << " sizeof(tipo)" << endl;
 		cout << "++               " << " incremento prefisso                   " << " ++lvalue" << endl;
@@ -199,8 +199,28 @@ int main() {
 		cout << "new              " << " allocazione array                     " << " tutte le forme " << endl;
 		cout << "delete           " << " deallocazione oggetto                 " << " tutte le forme " << endl;
 		cout << "delete           " << " deallocazione array                   " << " tutte le forme " << endl;
-		cout << "-----------------" << "---------------------------------------" << "-----------------------------" << endl;
-
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "->*              " << " selezione puntatore a membro          " << " puntatore->*puntatore_a_membro " << endl;
+		cout << ".*               " << " selezione puntatore a membro          " << " oggetto.*puntatore_a_membro " << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "*                " << " moltiplicazione                       " << " expr * expr" << endl;
+		cout << "/                " << " divisione                             " << " expr / expr" << endl;
+		cout << "%                " << " modulo o resto                        " << " expr % expr" << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "+                " << " addizione                             " << " expr + expr" << endl;
+		cout << "-                " << " sottrazione                           " << " expr - expr" << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "<<               " << " scorrimento bit a bit a sinistra      " << " expr << expr" << endl; 
+		cout << ">>               " << " scorrimento bit a bit a destra        " << " expr >> expr" << endl; 
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "<                " << " minore di                             " << " expr < expr " << endl;
+		cout << "<=               " << " minore o uguale a                     " << " expr <= expr " << endl;
+		cout << ">                " << " maggiore di                           " << " expr > expr " << endl;
+		cout << ">=               " << " maggiore o uguale a                   " << " expr >= expr " << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
+		cout << "==               " << " uguaglianza                           " << " expr == expr " << endl;
+		cout << "!=               " << " disuguaglianza                        " << " expr != expr " << endl;
+		cout << "-----------------" << "---------------------------------------" << "----------------------------------" << endl;
 
 		return(0);
 }
