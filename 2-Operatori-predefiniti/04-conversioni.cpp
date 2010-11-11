@@ -52,8 +52,8 @@ int main() {
 	// (Caso 4) La restituzione di una espressione, in una funzione, in cui il
 	// tipo dell'espressione restituita dalla funzione sia diverso dal tipo di
 	// ritorno definito nella funzione.
-	// Nel caso specifico l'intero somma sara' convertito in double, come si
-	// evince dalla sizeof.
+	// Nel caso specifico l'intero somma (dichiarato nella funzione) sara' 
+	// convertito in double, come si evince dalla sizeof.
 	cout << "\nCaso 4" << endl;
 	
 	int int_var1 = 978;
@@ -67,10 +67,12 @@ int main() {
 
 	// (Conversioni aritmetiche), esse assicurano che gli operandi di un
 	// operatore binario, quali possono essere l'operatore di moltiplicazione o
-	// di somma, vengano promossi ad un tipo di dato comune; le regole generali
+	// di somma, vengano promossi ad un tipo di dato comune, le regole generali
 	// sono:
+	//  
 	//  I) Il tipo di dato e' sempre promosso ad un tipo piu' ampio per evitare
 	// perdita di precisione;
+	// 
 	// II) Le espressioni con tipi di interi piu' piccoli rispetto ad un intero
 	// saranno promossi ad intero ancor prima della valutazione.
 	//
@@ -140,11 +142,36 @@ int main() {
 	var_int += static_cast<int>(var_dbl);
 	var_int += var_dbl;
 
-	cout << sizeof(var_int) << " byte" << var_int << endl;
+	cout << sizeof(var_int) << "byte " << var_int << endl;
 
-	// (Caso 2) Si utilizza il cast in quelle situazioni in cue possono essere
+	// (Caso 2) Si utilizza il cast in quelle situazioni in cui possono essere
 	// gestite diverse conversioni di tipo.
 	
+	// (void *) Un puntatore a ciascun tipo di dato, che non sia const, puo'
+	// essere assegnato a un puntatore di tipo void; void * e' usato ogni
+	// qualvolta in cui non si e' a conoscenza del tipo di un oggetto, per cui
+	// generalizzando si potrebbe affermare che un puntatore a void * puo'
+	// puntare verso oggetti di qualsiasi tipo.
+	//
+	// Da notare inoltre che in C++ non ci sono conversioni implicite 
+	// automatiche da void* a qualsiasi tipo di dato, deve sempre essere
+	// convertito ad un tipo specifico.
+	
+	void *ptr_void;
+	int *ptr_int = 0;
+	double *ptr_dbl = 0;
+	const int *ptr_const_int = 0;
+
+	ptr_void = ptr_int;
+	ptr_void = ptr_dbl;
+	
+	// ptr_void = ptr_const_int;
+	// Genera il seguente errore in fase di compilazione: 
+	// error: invalid conversion from ‘const void*’ to ‘void*’
+	//
+	// Sarebbe stata corretta se anche void* fosse stato definito const:
+	const void *ptr_const_void = ptr_const_int;
+
 	return(0);
 }
 
@@ -165,3 +192,6 @@ double caso4(int expr1, int expr2)
 
 	return somma;
 }
+
+// TO DO
+// Inserire alcuni esempi sulle conversioni esplicite Caso 2
