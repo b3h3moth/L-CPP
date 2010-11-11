@@ -3,31 +3,39 @@ using namespace std;
 
 #include <vector>
 
-// Come esempio della sezione si implementa una stack, una pila, secondo una
-// politica LIFO (Last in First Out), ovvero, l'ultimo elemento ade entrare 
-// nella sara' anche il primo ad uscire dalla pila stessa;  come esempio nel
-// mondo reale si puo' immaginare la classica pila di piatti.
+#define MAX_STACK 10
 
-// La classe intStack sara' in grado di gestire elementi di tipo intero
+// Come esempio della sezione si implementa una stack, una pila, secondo una
+// politica LIFO (Last in First Out), ovvero, l'ultimo elemento ad entrare 
+// sara' anche il primo ad uscire dallo stack; come esempio nel mondo reale si
+// pensi alla classica pila di piatti.
+
+// La classe Stackint sara' in grado di gestire elementi di tipo intero
 class Stackint 
 {
 	public:
 		// Costruttore
-		Stackint(int capacity)
-			: _stack(capacity), _top(0) {};
+		Stackint(int capacity) : _stack(capacity), _top(0) {};
 
-		// Preleva un elemento
+		// Rimuove l'elemento in cima allo stack
 		bool pop(int &value);
-		// Inserisce un elemento
+		
+		// Inserisce un elemento in cima allo stack
+		
 		bool push(int value);
+		// Restituisce l'elemento in cima allo stack, senza rimuoverlo
+		int peek();
 
 		// Stack pieno
 		bool full();
+		
 		// Stack vuoto
 		bool empty();
+		
 		// Visualizzazione di tutti gli elementi dello stack
 		void display();
 
+		// Ampiezza dello stack
 		int size();
 	private:
 		// Il valore del prossimo posto disponibile sara' memorizzato in _top;
@@ -42,34 +50,39 @@ class Stackint
 inline int Stackint::size() 
 { 
 	return _top; 
-};
+}
 
-// empty() restituisce true se _top e' uguale a 0, false alrimenti
+// empty() restituisce true se _top e' uguale a 0, false altrimenti
 inline bool Stackint::empty() 
 {
 	return (_top ? false: true);
-};
+}
 
 // full() restituisce true se _top e' uguale a stack.size(), ovvero se tutti gli
 // elementi sono stati inseriti nello stack
 inline bool Stackint::full() 
 {
 	return ((_top < _stack.size()-1) ? false : true);
-};
+}
 
-// Recupera il primo elemento nello stack
+
+// Rimuove l'elemento in cima allo stack, si gestisce l'operazione mediante la
+// forma prefissa dell'operatore di decremento.
 bool Stackint::pop(int &value)
 {
 	if ( empty() )
 		return false;
 
 	value = _stack[--_top];
+	
 	cout << "pop(): " << value << endl;
 
 	return true;
 }
 
-// Inserisce un elemento in cima allo stack
+
+// Inserisce un elemento in cima allo stack, si gestisce l'operazione mediante
+// la forma postfissa dell'operatore di incremento.
 bool Stackint::push(int value)
 {
 	cout << "push(): " << value << endl;
@@ -82,7 +95,26 @@ bool Stackint::push(int value)
 	return true;
 }
 
-// Visualizza ciascun elemento della pila, dalla base alla cima
+
+// Restituisce l'ultimo elemento dello stack, senza rimuoverlo
+int Stackint::peek()
+{
+	int value = -1;
+
+	if ( empty() ) {
+		cout << "empty: " << value << endl;
+		return value;
+	}
+	
+	value = _stack[_top-1];
+
+	cout << "peek(): " << value << endl;
+
+	return value;
+}
+
+
+// Visualizza gli elementi dello stack
 void Stackint::display()
 {
 	if ( !size() )  
@@ -95,19 +127,23 @@ void Stackint::display()
 	cout << " :TOP)\n";
 }
 
+
+// Test dello stack
 int main() {
-	Stackint stack(20);
-	stack.push(1);
+	Stackint stack(10);
+	stack.push(1000);
 
 	int x;
 
-	for (x=0; x<10; x++) {
-		if ( stack.empty() == false)
-			stack.push(x);
+	for (x=0; x<=MAX_STACK; x++) {
+		if ( stack.empty() == false ) {
+			stack.push(x*x);
+			stack.peek();
+		}
 		stack.display();
 	}
 
-	for (x=10; x>0; x--) {
+	for (x=MAX_STACK; x>0; x--) {
 		if ( stack.empty() == false)
 			stack.pop(x);
 		stack.display();
@@ -115,4 +151,3 @@ int main() {
 	
 	return(0);
 }
-
