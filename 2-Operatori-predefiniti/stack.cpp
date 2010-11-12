@@ -10,19 +10,19 @@ using namespace std;
 // sara' anche il primo ad uscire dallo stack; come esempio nel mondo reale si
 // pensi alla classica pila di piatti.
 
-// La classe Stackint sara' in grado di gestire elementi di tipo intero
-class Stackint 
+// La classe Stack sara' in grado di gestire elementi di tipo intero
+class Stack 
 {
 	public:
 		// Costruttore
-		Stackint(int capacity) : _stack(capacity), _top(0) {};
+		Stack(int capacity) : _stack(capacity), _top(0) {};
 
 		// Rimuove l'elemento in cima allo stack
 		bool pop(int &value);
 		
 		// Inserisce un elemento in cima allo stack
-		
 		bool push(int value);
+
 		// Restituisce l'elemento in cima allo stack, senza rimuoverlo
 		int peek();
 
@@ -47,20 +47,20 @@ class Stackint
 
 // _top contiene il numero degli elementi sulla pila, pertanto size() restiuisce
 // semplicemente _top
-inline int Stackint::size() 
+inline int Stack::size() 
 { 
 	return _top; 
 }
 
 // empty() restituisce true se _top e' uguale a 0, false altrimenti
-inline bool Stackint::empty() 
+inline bool Stack::empty() 
 {
 	return (_top ? false: true);
 }
 
 // full() restituisce true se _top e' uguale a stack.size(), ovvero se tutti gli
 // elementi sono stati inseriti nello stack
-inline bool Stackint::full() 
+inline bool Stack::full() 
 {
 	return ((_top < _stack.size()-1) ? false : true);
 }
@@ -68,7 +68,7 @@ inline bool Stackint::full()
 
 // Rimuove l'elemento in cima allo stack, si gestisce l'operazione mediante la
 // forma prefissa dell'operatore di decremento.
-bool Stackint::pop(int &value)
+bool Stack::pop(int &value)
 {
 	if ( empty() )
 		return false;
@@ -83,7 +83,7 @@ bool Stackint::pop(int &value)
 
 // Inserisce un elemento in cima allo stack, si gestisce l'operazione mediante
 // la forma postfissa dell'operatore di incremento.
-bool Stackint::push(int value)
+bool Stack::push(int value)
 {
 	cout << "push(): " << value << endl;
 
@@ -97,7 +97,7 @@ bool Stackint::push(int value)
 
 
 // Restituisce l'ultimo elemento dello stack, senza rimuoverlo
-int Stackint::peek()
+int Stack::peek()
 {
 	int value = -1;
 
@@ -108,14 +108,14 @@ int Stackint::peek()
 	
 	value = _stack[_top-1];
 
-	cout << "peek(): " << value << endl;
+	cout << "Primo elemento: " << value << endl;
 
 	return value;
 }
 
 
 // Visualizza gli elementi dello stack
-void Stackint::display()
+void Stack::display()
 {
 	if ( !size() )  
 		cout << "(0)\n";
@@ -130,16 +130,15 @@ void Stackint::display()
 
 // Test dello stack
 int main() {
-	Stackint stack(10);
+	Stack stack(10);
 	stack.push(1000);
 
 	int x;
 
 	for (x=0; x<=MAX_STACK; x++) {
-		if ( stack.empty() == false ) {
+		if ( stack.empty() == false )
 			stack.push(x*x);
-			stack.peek();
-		}
+		stack.peek();
 		stack.display();
 	}
 
