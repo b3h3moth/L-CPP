@@ -5,14 +5,24 @@ using namespace std;
 #include <list>
 #include <map>
 #include <iterator>
+#include <stack>
 
-// CONTENITORI (Container)
-// Sono classi che possono contenere gruppi eterogenei di oggetti.
+// CONTENITORI STANDARD (Standard Container)
+// Sono classi che possono contenere gruppi eterogenei di oggetti, le operazioni
+// di base sono state progettate in modo tale da essere simili, dal punto di
+// vista notazionale e del significato, tra i diversi tipi di contenitore.
 //
-// Saranno esaminati:
-// Vector
-// List
-// Map
+// I contenitori standard sono:
+// vector<T> 			- Vettore a dimensione variabile
+// list<T> 				- Lista con collegamenti bidirezionali
+// queue<T> 			- Coda
+// stack<T> 			- Pila
+// deque<T> 			- Coda bidirezionale
+// priority_queue<T> 	- Coda con ordinamento di priorita'
+// set<T> 				- Insieme
+// multiset<T> 			- Insieme, ammissibile ripetere valori
+// map<key, val> 		- Mappa o array associativo
+// multimap<key, val> 	- Mappa, ammissibile chiavi ripetute
 
 int main() {
 	int index;
@@ -245,6 +255,28 @@ int main() {
 	map<int, string>::iterator iter;
 	for(iter = MAP.begin(); iter != MAP.end(); iter++)
 		cout << (*iter).first << " -> " << (*iter).second << endl;
+
+	/*
+	 * STACK
+	 *
+	 * Intestazione da includere:
+	 * 
+	 * E' un adattatore per sequenze che simula la realizzazione di uno stack
+	 * secondo la politica LIFO (Last in First Out); supporta l'inserimento, la
+	 * rimozione e l'ispezione degli elementi dello stack, naturalmente le
+	 * operazioni di inserimento e rimozione sono sempre eseguite in testa.
+	 *
+	 * Le classiche operazioni pertanto sono push(val) e pop(), la prima
+	 * inserisce val in testa allo stack, la seconda rimuove l'elemento in
+	 * testa.
+	 */
+
+	stack<int> pila;
+	pila.push(20);
+	pila.push(100);
+	pila.push(20000);
+	pila.pop();
+
 
 	return(0);
 }
