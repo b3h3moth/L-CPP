@@ -45,8 +45,19 @@ int main() {
 	// A che scopo utilizzare una istruzione nulla, sia essa semplice o
 	// composta? E' utile soprattutto allorquando la sintassi del programma la
 	// richiede anche se logicamente se ne potrebbe fare a meno.
+	// Di seguito si calcola la lunghezza di una stringa utilizzando una
+	// istruzione nulla semplice.
+	const char str[] = "c++ language programming";
+	const char *p = str;
+	int len;
+
+	while (*p++)
+		;
+
+	// Da notare la conversione automatica dei due char in intero
+	len = p - str;
+	
+	cout << "strlen(len): " << len << endl;
 	
 	return(0);
 }
-
-// TO DO: Produrre un esempio esplicativo sul concetto di istruzione nulla.
