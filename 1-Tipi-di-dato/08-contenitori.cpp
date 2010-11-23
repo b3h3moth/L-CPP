@@ -59,7 +59,7 @@ int main() {
 // (1) Implementare un vector imitando l'array predefinito
 	// La somiglianza con l'array e' evidente.
 	
-	// Dichiaro un contenitore vector di 10 interi:
+	// Dichiaro un contenitore vector di MAX_SIZE interi
 	vector<int> vec(MAX_SIZE);
 	
 	// L'equivalente array predefinito, inizializzato:
@@ -213,7 +213,7 @@ int main() {
 	LISTA.push_back(80);			// Aggiunto alla fine	
 	LISTA.push_back(90);			// Aggiunto alla fine
 	// Aggiunto all'inizio dopo 1 elemento, diventa secondo della lista
-	LISTA.insert(++LISTA.begin(), 44);	
+	LISTA.insert(++LISTA.begin(), 44);
 	// Aggiunto 1 elemento dopo la fine, ovvero diventa primo
 	LISTA.insert(++LISTA.end(), 55);
 
