@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	
-	// SWITCH
+	// ISTRUZIONE CONDIZIONALE SWITCH
 	// L'istruzione switch consente un metodo alternativo alle clausole if-else,
 	// essa consente di scegliere una tra diverse opzioni definite in fase
 	// inmplementativa.
