@@ -7,7 +7,8 @@ using namespace std;
 int SearchMin(const vector<int>&vec_elem, int &occurs);
 
 int main() {
-
+	
+	// ISTRUZIONE CONDIZIONALE IF
 	// L'istruzione if, in base alla verita' di una espressione logica, consente
 	// l'esecuzione condizionale di una istruzione o di un blocco di istruzioni;
 	// la sintassi e' la seguente:
