@@ -12,8 +12,8 @@ int main() {
 	//
 	// Sintassi:
 	//
-	// switch (expr)
-	// 	statement
+	// switch (espressione)
+	// 	dichiarazione
 	//
 	// Le caratteristiche implementative e logiche possono essere sintetizzate
 	// mediante le seguenti proprieta':
