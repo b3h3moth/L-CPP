@@ -105,7 +105,7 @@ int main() {
 	// 
 	// La condizione puo' essere sia una espressione sia una definizione di
 	// inizializzazione.
-	cout << "\n\nCiclo while" << endl;
+	cout << "Ciclo while" << endl;
 	
 	bool testing = false;
 	char ch = '/';
@@ -117,11 +117,11 @@ int main() {
 		break;
 	}
 
-
 	// In quest'altro caso invece la condizione e' una definizione di
 	// inizializzazione. Il break non e' stato inserito poiche' la condizione
 	// risulta falsa, poche' il carattere non e' un alfanumerico, come la 
 	// condizione vorrebbe.
+
 	while ( int valore = isalpha(ch)) {
 		cout << ch << endl;
 	}
@@ -132,6 +132,90 @@ int main() {
 	// per lo meno una volta prima della verifica della condizione, e questo
 	// puo' essere causa di errori seri qualora il programmatore non faccia
 	// attenzione.
+	//
+	// La sintassi e' la seguente:
+	//
+	// do
+	// 		istruzione
+	// while (espressione);
+	//
+	// Si esegue anzitutto istruzione, dopodiche' se espressione risulta
+	// essere vera per una determinata condizione, e' eseguito il corpo del
+	// ciclo. 
+	cout << "Istruzione ciclo do while" << endl;
+
+	int contatore = 1;
+
+	// Si propone il seguente codice per verificare se effettivamente il corpo
+	// del ciclo e' eseguito prima dell'istruzione while; il break e' necessario
+	// altrimenti il codice andrebbe in loop infinito, in questi casi per
+	// interrompere l'esecuzione si digita la combinazioni di tasti ^Cc, forma
+	// abbreviata di Control+c.
+	
+	do {
+		cout << contatore++ << endl;
+		break;
+	} while (contatore <= 5);
+
+	// ISTRUZIONI BREAK E CONTINUE
+	////////////////////////////////////////////////////////////////////////////
+	// L'istruzione break termina l'esecuzione di un ciclo for, while, do-while
+	// e dell'istruzione condizionale switch; l'esecuzione ricomincia dalla
+	// prima istruzione immediatamente successiva rispetto a quelle citate.
+	//
+	// Da notare che se l'istruzione if non fosse stata inserita nel blocco del
+	// ciclo for sarebbe stato errore, il compilatore non avrebbe compilato, per
+	// cui si ponga particolare attenzione a questa caratteristica.
+	//
+	// Infine, qualora ci si trovi con due istruzioni di ciclo nidificate,
+	// l'istruzione break sarebbe valida solo per quella piu' interna.
+	//
+	// L'istruzione continue e' equivalente ad un salto di un ciclo, in pratica
+	// salta le restanti istruzioni, qualora ci siano, e passa alla iterazione
+	// successiva.
+	cout << "Istruzione break" << endl;
+
+	int arr[MAX_ARR] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+	int search_num = 8;
+	int x,y;
+
+	// Si ricerca un valore all'interno di un array, non appena individuato gli
+	// si assegna un nuovo valore e il ciclo termina; da notare che l'istruzione
+	// condizionale if seguita da un break e' valida solo perche' essa e'
+	// all'interno di un ciclo for, altrimenti, come accennato pocanzi, sarebbe
+	// stato errore.
+	
+	for (x=0; x<MAX_ARR; x++) {
+		cout << arr[x] << endl;
+		if (arr[x] == search_num) {
+			cout << "stop" << endl;
+			arr[x] = 0;
+			break;
+		}
+	}
+
+	// Si propone lo stesso codice proprio per evidenziare le differenze, 
+	// naturalmente al posto dell'istruzione break vi e' l'istruzione continue. 
+	//
+	// Si cerca un valore nell'array e quando risulta una corrispondenza,
+	// mediante l'istruzione continue, si saltano le restanti istruzioni
+	// dell'iterazione, contrassegnate con #1 e #2, passando direttamente ad una
+	// nuova iterazione.
+	//
+	// Come si puo' notare anche dall'output del ciclo precedente, l'array
+	// corrispindente a search_num e' stato modificato con il valore 0, in
+	// questo caso invece non ci sara' nessuna modifica, proprio grazie al
+	// continue che fara' letteralmente saltare quella istruzione, ed altre.
+	cout << "Istruzione continue" << endl;
+
+	for (y=0; y<MAX_ARR; y++) {
+		cout << arr[y] << endl;
+		if (arr[y] == search_num) {
+			continue;
+			cout << "stop" << endl; // #1
+			arr[y] = 9;				// #2
+		}
+	}
 
 	return(0);
 }
