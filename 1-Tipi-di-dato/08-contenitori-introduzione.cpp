@@ -8,11 +8,17 @@ using namespace std;
 #include <stack>
 
 // CONTENITORI STANDARD (Standard Container)
-// Sono classi che possono contenere gruppi eterogenei di oggetti, le operazioni
-// di base sono state progettate in modo tale da essere simili, dal punto di
-// vista notazionale e del significato, tra i diversi tipi di contenitore.
+// Sono classi che possono contenere gruppi eterogenei di oggetti, i contenitori
+// sono stati definiti in tal modo proprio perchè possono contenere diverse
+// forme di oggetti, le operazioni di base inoltre sono state progettate in modo
+// tale che gran parte di esse potrà essere fruibile da ciascun tipo di 
+// contenitore.
+//
+// Stroustrup: "Una classe che abbia il compito principale di memorizzare vari
+// oggetti viene comunemente chiamata contenitore"
 //
 // I contenitori standard sono:
+//
 // vector<T> 			- Vettore a dimensione variabile
 // list<T> 				- Lista con collegamenti bidirezionali
 // queue<T> 			- Coda
@@ -29,14 +35,14 @@ int main() {
 
 	/*
 	 * VECTOR
-	 *
+	 ***************************************************************************
 	 * Intestazione da aggiungere:
 	 * #include <vector>
 	 *
 	 * Un vector e' una sequenza che supporta accessi random agli elementi, la
 	 * gestione della memoria e' automatica; il tempo per inserire o cancellare
 	 * ciascun elemento dalla fine della sequenza e' costante, mentre e' lineare
-	 * se l'inserimento o la cancellazione di un elemento avviene all'inizio o
+	 * se l'inserimento o la cancellazione di un elemento avvenisse all'inizio o
 	 * nel mezzo della sequenza stessa. 
 	 *
 	 * Il numero degli elementi in un vector puo' variare dinamicamente.
@@ -44,8 +50,8 @@ int main() {
 
 	 * Se si volesse banalizzare il concetto, o meglio, se si volesse rendere
 	 * il discorso molto piu' semplice, nulla risulterebbe errato se si
-	 * definisse la classe vector come una alternativa molto efficiente 
-	 * all'array predefinito.
+	 * definisse la classe vector come un'alternativa molto efficiente 
+	 * all'array predefinito, e in un certo e' anche cosi'.
 	 *
 	 * Un vector puo' essere implementato mediante due stili ben definiti:
 	 * 1) Imitando l'array predefinito;
@@ -65,18 +71,18 @@ int main() {
 	// L'equivalente array predefinito, inizializzato:
 	int arr[MAX_SIZE] = {10,20,30,40,50};	
 	
-	// L'operatore di subscript [] naturalmente e' lecito per accedere agli
-	// elementi:
-	cout << " ### Operatore di subscript []" << endl;
+	// L'operatore di subscript [] e' ammesso per accedere agli elementi:
+	cout << "(1) -  Operatore di subscript []" << endl;
 
 	for (index = 0; index < MAX_SIZE; index++) {
 		vec[index] = arr[index];
 		cout << vec[index] << endl;
 	}
 
-	// E' possibile utilizzare alcune funzioni per verificare sia la dimensione
-	// sia la possibilita' che sia vuoto, size() ed empty() rispettivamente:
-	cout << "\n ### size() empty()" << endl;
+	// Diverse sono le funzioni con cui interagire con una classe vector, due di
+	// esse sono size() ed empty(), mediante le quali si verifica l'ampiezza e
+	// il vector vuoto rispettivamente.
+	cout << "(2) - size() empty()" << endl;
 	
 	if (vec.empty())	// Restituisce true se vuoto
 		cout << "vec: VUOTO" << endl;	
@@ -89,45 +95,50 @@ int main() {
 	// tuttavia e' possibile scavalcare[1] - le note sono a pie' di pagina - il 
 	// costruttore di default definendo uno specifico valore per tutti gli 
 	// elementi:
-	cout << "\n ### Oltre il ... costruttore di default" << endl;
-	
+	cout << "(3) - Oltre il ... costruttore di default" << endl;
+
+	// Si assegna a ciascun elemento un valore, 9 nel caso specifico:
 	vector<int> nvect(MAX_SIZE, 9);
 
 	for (index = 0; index < MAX_SIZE; index++)
 		cout << nvect[index] << endl;
 
 	// Un array puo' essere inizializzato contestualmente alla sua dichiarazione
-	// mediante costanti, un oggetto vector non puo', tuttavia e' in grado di
-	// fare ben altro; un oggetto vector puo' essere inizializzato con tutta o
-	// solo una parte di un array.
+	// mediante costanti intere, un oggetto vector non puo', tuttavia e'
+	// in grado di fare ben altro, ossia puo' essere inizializzato utilizzando
+	// tutta o solo una parte di un array.
 	//
 	// Per far questo, si deve inserire l'indirizzo di partenza da cui iniziare
 	// a copiare gli elementi e l'indirizzo successivo all'ultimo elmento da 
 	// copiare, con un esempio sara' tutto molto piu' chiaro:
-	cout << "\n ### Copia di array o parti di esso in un oggetto vector..." <<
+	cout << "(4) - Copia di array o parti di esso in un oggetto vector..." <<
 		endl;
-	
-	int iarr[MAX_SIZE+5] = {100,200,300,400,500,600,700,800,900,1000};
-	vector<int> ivect(iarr, iarr+5);
-	
+
+	// L'array dal quale si copiano i valori degli elementi:
+	int int_array[MAX_SIZE+5] = {100,200,300,400,500,600,700,800,900,1000};
+
+	// Si copiano i primi 5 elemeenti dell'array:
+	vector<int> ivect(int_array, int_array+5);
+
 	for (index=0; index<MAX_SIZE ; index++)
 		cout << ivect[index] << endl;
 
-	// L'inervallo puo' anche essere individuato in un sottoinsieme dell'array:
 	cout << "...sottoinsieme" << endl;
 
-	vector<int> svect(&iarr[3], &iarr[6]);
+	// L'inervallo puo' anche essere individuato in un sottoinsieme dell'array.
+	// Si copiano gli elementi dell'array compresi nel range specificato:
+	vector<int> svect(&int_array[3], &int_array[6]);
 	
 	for (index=0; index<svect.size() ; index++) // Si noti l'utilizzo di size
 		cout << svect[index] << endl;
 
 	// A differenza degli array un oggetto vector puo':
-	// essere inizializzato con un altro vector;
-	// essere copiato in un altro vector.
+	//  I) essere inizializzato con un altro vector;
+	// II) essere copiato in un altro vector.
 	
 // (2) Implementare un vector secondo lo stile proprio della STL
 	// Sino ad'ora si e' utilizzato il contenitore vector simulando l'array
-	// predefinito, ora si considerera' invece lo stile STL[2], che prevede, al
+	// predefinito, ora invece sara' considerato lo stile STL[2], che prevede, al
 	// posto della definizione di una dimensione come per gli array, la 
 	// creazione di un vector vuoto.
 
@@ -143,9 +154,9 @@ int main() {
 	new_git_rep = repository;			// copia un vector in un altro vector
 
 	// Per visualizzare le stringhe all'interno dei relativi vector si potrebbe
-	// tranquillamante iterare i vari elementi mediante l'operatore di 
-	// subscript, (si potrebbe definire come il metodo classico):
-	cout << "\n ### Stile STL: iterazione mediante subscript" << endl;
+	// tranquillamante iterare i vari elementi mediante l'operatore di
+	// subscript:
+	cout << "(5) - Stile STL: iterazione mediante subscript" << endl;
 
 	for (index=0; index<git_rep.size(); index++) {
 		cout << "     git_rep: " << git_rep[index] << endl;
@@ -154,11 +165,11 @@ int main() {
 	}
 
 	// Tuttavia e' possibile anche utilizzare gli iteratori restituiti dalle
-	// funzioni begin() ed end() di vector, (si potrebbe definire il metodo
-	// standard o consigliato); un iteratore e' una classe della libreria
+	// funzioni begin() ed end() di vector, che peraltro e' il metodo standard
+	// consigliato; un iteratore e' una classe della libreria
 	// standard, fornisce all'oggetto creato - nel caso specifico it - le 
 	// funzionalita' di un puntatore:
-	cout << "\n ### iterazione mediante classe iterator" << endl;
+	cout << "(6) - iterazione mediante classe iterator" << endl;
 
 	vector<string>::iterator it = git_rep.begin();
 	
@@ -168,18 +179,28 @@ int main() {
 
 	// PORRE ATTENZIONE A:
 	// 
-	// 1) Non confondere i due stili, ossia quello che simula gli array
+	// Non confondere i due stili, ossia quello che simula gli array
 	// predefiniti e quello STL, il primo prevede la dimensione iniziale e di
 	// seguito, o contestualmente, il riempimento degli elementi, il secondo
 	// invece prevede la definizione di un vector vuoto, per poi lavorarlo con
-	// le le funzioni predefinite della classe stessa. Se vogliamo il secondo
-	// metodo e' di gran lunga piu' vicino alla programmazione ad oggetti,
-	// concettualmente s'intende.
+	// le funzioni predefinite della classe stessa. 
 	//
-	// 2) Si tenga bene a mente che l'inserimento in un vector non sovrascrive
+	// Il metodo STL e' di gran lunga il piu' vicino alla programmazione ad
+	// oggetti, concettualmente s'intende.
+	//
+	// Si tenga bene a mente che l'inserimento in un vector non sovrascrive
 	// ma aggiunge, per cui vale sempre la pena considerare sempre il
 	// numero degli elementi allorquando si lavora con un vector:
-	cout << "\n ### vector size()" << endl;
+	//
+	// Se si dichiara:
+	// vector<int> book(10);
+	// vector<int> book[10];
+	//
+	// Nel primo caso si tratta di un vettore di 10 elementi, nel secondo invece
+	// sono stati dichiarati 10 vettori vuoti, per cui attenzione alle
+	// parentesi.
+	
+	cout << "(7) - vector size()" << endl;
 
 	vector<int> mvect(MAX_SIZE);
 	
@@ -190,9 +211,10 @@ int main() {
 
 	cout << mvect.size() << endl;
 
+	
 	/*
 	 * LIST
-	 * 
+	 ***************************************************************************
 	 * Intestazione da aggiungere:
 	 * #include <list>
 	 *
@@ -227,7 +249,7 @@ int main() {
 
 	/*
 	 * MAP
-	 *
+	 ***************************************************************************
 	 * Intestazione da includere:
 	 * #include <map>
 	 *
@@ -258,7 +280,7 @@ int main() {
 
 	/*
 	 * STACK
-	 *
+	 ***************************************************************************
 	 * Intestazione da includere:
 	 * 
 	 * E' un adattatore per sequenze che simula la realizzazione di uno stack
