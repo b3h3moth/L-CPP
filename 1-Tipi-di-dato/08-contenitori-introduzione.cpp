@@ -234,8 +234,10 @@ int main() {
 	LISTA.insert(LISTA.end(), 33);	// Aggiunto alla fine
 	LISTA.push_back(80);			// Aggiunto alla fine	
 	LISTA.push_back(90);			// Aggiunto alla fine
+	
 	// Aggiunto all'inizio dopo 1 elemento, diventa secondo della lista
 	LISTA.insert(++LISTA.begin(), 44);
+
 	// Aggiunto 1 elemento dopo la fine, ovvero diventa primo
 	LISTA.insert(++LISTA.end(), 55);
 
@@ -275,6 +277,7 @@ int main() {
 	cout << "MAP.size() : " << MAP.size() << endl;
 
 	map<int, string>::iterator iter;
+	
 	for(iter = MAP.begin(); iter != MAP.end(); iter++)
 		cout << (*iter).first << " -> " << (*iter).second << endl;
 
@@ -294,11 +297,14 @@ int main() {
 	 */
 
 	stack<int> pila;
+	
 	pila.push(20);
 	pila.push(100);
 	pila.push(20000);
 	pila.pop();
 
+	// TODO: Inserire gli alri container ed integrare un esempio di stack
+	// funzionante.
 
 	return(0);
 }
