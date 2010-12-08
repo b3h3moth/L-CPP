@@ -7,28 +7,38 @@ using namespace std;
 #include <iterator>
 #include <stack>
 
-// CONTENITORI STANDARD (Standard Container)
-// Sono classi che possono contenere gruppi eterogenei di oggetti, i contenitori
-// sono stati definiti in tal modo proprio perchè possono contenere diverse
-// forme di oggetti, le operazioni di base inoltre sono state progettate in modo
-// tale che gran parte di esse potrà essere fruibile da ciascun tipo di 
-// contenitore.
+// INTRODUZIONE AI CONTENITORI STANDARD (Standard Container)
+// La Standard Template Library del C++ fornisce una collezione generica di
+// classi e algoritmi che consentono di poter implementare con relativa 
+// facilita' diverse strutture dati, quali possono essere le liste (list) o le
+// pile (stack).
+//
+// I container sono classi (template di classi), sono stati definiti in tal modo
+// proprio perchè possono contenere diverse forme di oggetti, le operazioni di
+// base peraltro sono state progettate in modo tale da poter essere utilizzate
+// da diversi tipi di container.
 //
 // Stroustrup: "Una classe che abbia il compito principale di memorizzare vari
 // oggetti viene comunemente chiamata contenitore"
 //
-// I contenitori standard sono:
+// I contenitori standard sono suddivisibili in tre diverse categorie.
 //
-// vector<T> 			- Vettore a dimensione variabile
-// list<T> 				- Lista con collegamenti bidirezionali
-// queue<T> 			- Coda
-// stack<T> 			- Pila
-// deque<T> 			- Coda bidirezionale
-// priority_queue<T> 	- Coda con ordinamento di priorita'
-// set<T> 				- Insieme
-// multiset<T> 			- Insieme, ammissibile ripetere valori
-// map<key, val> 		- Mappa o array associativo
-// multimap<key, val> 	- Mappa, ammissibile chiavi ripetute
+// Sequences:
+// - vector<T> 				- Vettore a dimensione variabile
+// - list<T> 				- Lista con collegamenti bidirezionali
+// - deque<T> 				- Coda bidirezionale
+//
+// Container Adapters:
+// - queue<T> 				- Coda
+// - stack<T> 				- Pila
+// - priority_queue<T> 		- Coda con ordinamento di priorita'
+//
+// Associative containers:
+// - set<T> 				- Insieme
+// - multiset<T> 			- Insieme, ammissibile ripetere valori
+// - map<key, val> 			- Mappa o array associativo
+// - multimap<key, val> 	- Mappa, ammissibile chiavi ripetute
+// - bitset<T>				- Fornisce operazioni per l'accesso ai singoli bit
 
 int main() {
 	int index;
@@ -325,8 +335,8 @@ int main() {
  * molto generica, ma quanto basta per poter proseguire con lo studio delle
  * sezioni successive.
  *
- * [2] STL sta per Standard Template Library; sono una collezione di classi
- * incluse nella libreria standard del C++, con la peculiarita' che possono
- * essere gestite con ogni tipo di dato; e' importantissimo ed essenziale
+ * [2] STL sta per Standard Template Library, indica una collezione di classi e
+ * algoritmi inclusi nella libreria standard del C++, essi inoltre hanno la
+ * peculiarita' che possono essere gestiti con ogni tipo di dato; e' essenziale
  * per un programmatore C++ sfruttare a fondo tale libreria.
  */
