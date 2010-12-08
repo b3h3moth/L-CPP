@@ -1,0 +1,6 @@
+Si ricorda che i container sono stati introdotti nella sezione uno; in questa
+sezione invece, oltre a riprendere il discorso[1], saranno presentati ulteriori
+tipi di contenitori astratti.
+
+[1] Il file relativo ai contenitori e' 08-contenitori-introduzione.cpp, nella
+directory relativa ai tipi di dato.
