@@ -1,3 +1,9 @@
+[15-12-2010 20:15]
+- Sarebbe il caso  di non tradurre taluni tecnicismi o semplici concetti che in
+lingua Italiana potrebbero non essere perfettamente consoni; vocaboli quali
+container, stack, deque, linked_list, scope e via discorrendo vanno tutti
+modificati ed adattati. 
+
 [28-11-2010 17:41]
 - Inserire la sintassi cosi' com'e' scritta nella BNF del linguaggio; una buona
 fonte di riferimento per prelevarla e' il testo di Stroustrup.
