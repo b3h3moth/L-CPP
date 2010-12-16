@@ -100,6 +100,28 @@ int main() {
 
 	for (int i = 0; i<language_programming.size(); i++)
 		cout << language_programming[i] ;
+
+	// Un nuovo oggetto container puo' essere inizializzato con la copia di un
+	// container esistente:
 	
+	vector<string> new_str_vector(language_programming);
+
+	// Container ed operatori relazionali
+	////////////////////////////////////////////////////////////////////////////
+	// Ciascun container supporta taluni operatori relazioni che consentono
+	// l'implementazione delle seguenti operazioni tra due container:
+	// - Uguaglianza ==
+	// - Disuguaglianza !=
+	// - Minore di <
+	// - Minore o uguale a <=
+	// - Maggiore di >
+	// - Maggiore uguale a >=
+	// 
+	// Il confronto avviene per coppie tra gli elementi di ciascun container.
+	
+	vector<int> int_vector
+
+
+
 	return(0);
 }
