@@ -118,10 +118,6 @@ int main() {
 	// - Maggiore uguale a >=
 	// 
 	// Il confronto avviene per coppie tra gli elementi di ciascun container.
-	
-	vector<int> int_vector
-
-
 
 	return(0);
-}
+
