@@ -16,13 +16,9 @@ class GradeBook
 		void determineClassAverage();		// Calcola media voti
 		void inputGrades();					// Legge tot voti dell'utente
 		void displayGradeReport();			// Visualizza sommario voti
+		int maximum(int x, int y, int z);	// Il massimo di 3 valori
 
 	private: // Dati membro, incapsulati nell'oggetto
 		string courseName;	// nome del corso
-		int aCount;			// somma dei voti A
-		int bCount;			// somma dei voti B
-		int cCount;			// somma dei voti C
-		int dCount;			// somma dei voti D
-		int fCount;			// somma dei voti F
+		int maximumGrade;	// Massimo dei 3 valori	
 };
-
