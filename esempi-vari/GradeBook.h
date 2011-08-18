@@ -6,19 +6,24 @@ using namespace std;
 class GradeBook
 {
 	public:
+		// Studenti iscrtitti al corso
+		const static int students = 10;
+
 		// Costruttore
-		GradeBook(string name);	
+		GradeBook(string name, const int gradesArray[]);	
 
 		// funzioni membro
 		void setCourseName(string name);	// Imposta nome corso
 		string getCourseName();				// Legge nome corso
 		void displayMessage();				// Visualizza msg di benvenuto
-		void determineClassAverage();		// Calcola media voti
-		void inputGrades();					// Legge tot voti dell'utente
-		void displayGradeReport();			// Visualizza sommario voti
-		int maximum(int x, int y, int z);	// Il massimo di 3 valori
+		void processGrades();				// Elaborazioni sui dati
+		int getMinimum();					// Trova il minimo
+		int getMaximum();					// Trova il massimo
+		double getAverage();				// Determina media voti
+		void outputBarChart();				// Visualizza istogramma dei voti
+		void outputGrades();				// Visualizza tutti i voti
 
 	private: // Dati membro, incapsulati nell'oggetto
-		string courseName;	// nome del corso
-		int maximumGrade;	// Massimo dei 3 valori	
+		string courseName;					// nome del corso
+		int grades[students];				// Array voti studenti
 };
