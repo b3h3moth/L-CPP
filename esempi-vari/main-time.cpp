@@ -18,6 +18,7 @@ int main() {
 	cout << "Std.  ";
 	oggetto.printStandard();
 	
+	
 	oggetto.setTime(18, 30, 00);
 	cout << "Univ. ";
 	oggetto.printUniversal();
