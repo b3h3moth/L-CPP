@@ -4,9 +4,17 @@
 class Time
 {
 	public:
-		Time();		// Costruttore
+		Time(int h = 0, int m = 0, int s = 0);	// Costruttore di default
 
-		void setTime(int h, int m, int s);	// Setta l'orario
+		void setTime(int h, int m, int s);	// Setta ora, minuti, secondi
+		void setHour(int h);				// Imposta l'ora
+		void setMinute(int m);				// Imposta i minuti
+		void setSecond(int s);				// Imposta i secondi
+
+		int getHour();						// Restituisce l'ora
+		int getMinute();					// Restituisce i minuti
+		int getSecond();					// Restituisce i secondi
+
 		void printUniversal();				// Ora in formato universale
 		void printStandard();				// Ora in formato standard
 
