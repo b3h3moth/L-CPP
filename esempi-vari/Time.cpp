@@ -33,22 +33,22 @@ void Time::setSecond(int s)
 	second = (s >= 0 &&  s < 60) ? s : 0;
 }
 
-int Time::getHour()
+int Time::getHour() const
 {
 	return hour;
 }
 
-int Time::getMinute()
+int Time::getMinute() const
 {
 	return minute;
 }
 
-int Time::getSecond()
+int Time::getSecond() const
 {
 	return second;
 }
 
-void Time::printUniversal()
+void Time::printUniversal() const
 {
 	cout << setfill('0')  << setw(2) << getHour() << ":" 
 		 << setw(2) << getMinute() << ":" << setw(2) << getSecond() << endl;

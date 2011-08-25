@@ -11,11 +11,11 @@ class Time
 		void setMinute(int m);				// Imposta i minuti
 		void setSecond(int s);				// Imposta i secondi
 
-		int getHour();						// Restituisce l'ora
-		int getMinute();					// Restituisce i minuti
-		int getSecond();					// Restituisce i secondi
+		int getHour() const;				// Restituisce l'ora
+		int getMinute() const;				// Restituisce i minuti
+		int getSecond() const;				// Restituisce i secondi
 
-		void printUniversal();				// Ora in formato universale
+		void printUniversal() const;		// Ora in formato universale
 		void printStandard();				// Ora in formato standard
 
 	private:

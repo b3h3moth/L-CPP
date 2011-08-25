@@ -9,6 +9,8 @@ int main() {
 	Time ogg3(18, 30);		// Si impostano ora e minuti; sec di default
 	Time ogg4(21, 30, 59);	// Si impostano ora, minuti, secondi
 	Time ogg5(25, 98, 61);	// Si impostano valori non corretti
+	const Time ogg6(23, 50, 31);	// Si dichiara un oggetto costante
+	ogg6.printUniversal();
 
 	cout << "ogg1: " << endl;
 	ogg1.printUniversal();
@@ -30,6 +32,10 @@ int main() {
 	ogg5.printUniversal();
 	ogg5.printStandard();
 
+	cout << "ogg6: " << endl;
+	ogg6.printUniversal();
+	// ogg6.printStandard(); Errore poichè si sta utilizzando un oggetto 
+	// dichiarato const
 
 	return(0);
 }
