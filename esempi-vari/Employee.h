@@ -5,6 +5,8 @@
 
 class Employee
 {
+	// const char * const dato
+	// si legge: dato è un puntatore costante a un tipo di dato char costante
 	public:
 		Employee(const char * const first, const char * const last, 
 				const Date &dateOfBirth, const Date &dateOfHire);
