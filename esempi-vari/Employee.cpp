@@ -13,17 +13,11 @@ Employee::Employee(const char * const first, const char * const last,
 : birthDate(dateOfBirth),
 	hireDate(dateOfHire)
 {
-	// Copia di first in firstName e verifica lunghezza
-	int length = strlen(first);
-	length = (length < 25 ? length : 24);
-	strncpy(firstName, first, length);
-	firstName[length] = '\0';
+	firstName = new char[strlen(first)+1];
+	strcpy(firstName, first);
 
-	// Copia di last in lastName e verifica lunghezza
-	length = strlen(last);
-	length = (length < 25 ? length : 24);
-	strncpy(lastName, last, length);
-	lastName[length] = '\0';
+	lastName = new char[strlen(last)+1];
+	strcpy(lastName, last);
 
 	// Mostra la chiamata del costruttore
 	cout << "Employee object constructor: " << firstName << ' ' << lastName 

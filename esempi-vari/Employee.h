@@ -14,8 +14,8 @@ class Employee
 		~Employee();
 
 	private:
-		char firstName[25];
-		char lastName[25];
+		char *firstName;
+		char *lastName;
 		const Date birthDate;
 		const Date hireDate;
 };
