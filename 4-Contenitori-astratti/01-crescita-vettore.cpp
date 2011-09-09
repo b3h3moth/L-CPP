@@ -41,7 +41,7 @@ int main() {
 	// Discorso a parte per la capacita', poiche', allorquando si raggiunge
 	// la capacita' massima, il vettore alloca il doppio[1] della sua capacita'
 	// attuale e copia ciascun elemento nella memoria appena allocata,
-	// dopodiche' la vecchia memoria. Il crescita di un vettore pertanto
+	// dopodiche' la vecchia memoria. La crescita di un vettore pertanto
 	// avviene in maniera dinamica.
 	
 	// COSTI E BENEFICI DELLA CRESCITA DI UN VETTORE
@@ -76,5 +76,5 @@ int main() {
 }
 
 
-// [1] La capacita' di un vettore segue il seguende ridimensionamento:
+// [1] La capacita' di un vettore segue il seguente ridimensionamento:
 // 2 4 8 16 32 64 128 256 1024 2048 etc...
