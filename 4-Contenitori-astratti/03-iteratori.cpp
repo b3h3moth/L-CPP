@@ -28,8 +28,8 @@ int main() {
 	// Medinate *itesi accede al valore dell'elemento, 
 	// Mediante ++iter si fa avanzare l'iteratore verso l'elemento successivo.
 	for (; iter != iter_end; ++iter)
-		cout << *iter << endl;
-	
+		cout << *iter;
+	cout << endl;
 	// ITERATORI IN SOLA LETTURA AD ELEMENTI COSTANTI
 	////////////////////////////////////////////////////////////////////////////
 	// Ciascun contenitore, oltre al tipo iterator, implementa il tipo
@@ -47,7 +47,7 @@ int main() {
 	vector<int>::const_iterator iterc_end = int_vector_2.end();
 
 	for (; iterc != iterc_end; ++iterc)
-		cout << *iterc << endl;
+		cout << *iterc;
 
 	// Da notare che non avrebbe compilato se fosse stato utilizzato il solo 
 	// iterator. L'aritmetica degli iteratori e' del tutto simile all'aritmetica
