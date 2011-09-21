@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	// INSERIMENTO
+	// INSERIMENTO (tradizionale)
 	////////////////////////////////////////////////////////////////////////////
 	
 	cout << "inserimento all'inizio" << endl;
