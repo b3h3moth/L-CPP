@@ -4,15 +4,16 @@ using namespace std;
 int main() {
 	// PUNTATORE
 	// Un puntatore contiene l'indirizzo di un altro oggetto; la differenza tra
-	// puntatori pertanto sta nell'oggetto puntato e non nel tipo di puntatore,
-	// ora alcune regole da tenere bene a mente:
+	// puntatori sta nell'oggetto puntato e non nel tipo di puntatore, ora 
+	// alcune regole da tenere bene a mente:
 	// - Un puntatore non puo' puntare ad un oggetto di un altro tipo di dato,
 	// tuttavia, mediante il puntatore speciale *void, questa regola puo'
-	// essere in un certo senso 'scavalcata';
+	// essere in un certo senso 'superata';
 	// - il puntatore *void indica un indirizzo, ma il tipo dell'oggetto di
-	// quell'indirizzo non e' conossciuto; con *void non si puo' operare ma 
+	// quell'indirizzo non e' conosciuto; con *void non si puo' operare ma 
 	// solo memorizzazione e confronto di indirizzi;
-	// - Un puntatore inizializzat0 a 0 sta ad indicare che non punta a nulla;
+	
+	// - Un puntatore inizializzato a 0 sta ad indicare che non punta a nulla;
 	// - * operatore di dereference - dereferenza;
 	// - & operatore indirizzo.
 	
