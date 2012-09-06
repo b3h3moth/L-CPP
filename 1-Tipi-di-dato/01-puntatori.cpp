@@ -38,8 +38,7 @@ int main() {
       << "valore  indiretto: " << *p << "\n"
       << "valore doppiamente indiretto: " << **ppi 
       << endl;
-	
-	
+
 	return(0);
 }
 

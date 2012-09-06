@@ -5,7 +5,7 @@ using namespace std;
 
 #define MAX_STACK 10
 
-// Come esempio della sezione si implementa una stack, una pila, secondo una
+// Come esempio della sezione si implementa uno stack, una pila, secondo una
 // politica LIFO (Last in First Out), ovvero, l'ultimo elemento ad entrare 
 // sara' anche il primo ad uscire dallo stack; come esempio nel mondo reale si
 // pensi alla classica pila di piatti.
