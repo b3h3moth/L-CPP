@@ -3,7 +3,7 @@ using namespace std;
 
 class Linux {
     public:
-    	Linux(const string kernel = "linux", const string distro = "debian");
+    	Linux(string kernel = "linux", string distro = "debian");
 
     	void setSystem(string os_name, string distro_name);
 	void print();
