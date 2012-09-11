@@ -10,6 +10,7 @@ parentesi dal valore da assegnare; tale metodo serve per inizializzare dati
 membro const
 */
 
+// Lista di inizializzatori
 Increment::Increment(int c, int i) : count(c), increment(i)
 {
     /* Si opera con l'inizializzazione perchè un attributo costante non puo'
