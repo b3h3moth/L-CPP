@@ -5,12 +5,16 @@ using namespace std;
 #include "Employee.h"
 #include "Date.h"
 
-/* Il costruttore della classe Employee utilizza, in particolare, due
-inizializzatori, per passare i valori iniziali ai costruttori degli oggetti
-dateOfBirth e dateOfHire. Si noti che entrambi sono oggetti della classe Date.
-
+/* 
 La composizione consente di utilizzare oggetti di altre classi nella creazione
 di nuove classi, caratteristica peculiare della programmazione ad oggetti.
+
+Gli ultimi due parametri del costruttore della classe Employee sono due
+oggetti costanti della classe Date, dateOfBirth e dateOfHire, per inizializzarli
+occorre passarli al costruttore della classe stessa.
+
+Gli inizializzatori indicano gli argomenti di Employee da passare ai costruttori
+degli oggetti membro (subito dopo il simbolo ':')
 */
 
 Employee::Employee(const char * const first, const char * const last, 
