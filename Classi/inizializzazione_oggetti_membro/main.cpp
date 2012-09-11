@@ -4,9 +4,9 @@ using namespace std;
 #include "Employee.h"
 
 int main() {
-    Date birth(10, 10, 1925);
-    Date hire(10, 10, 2002);
-    Employee manager("Guidus", "Surujan", birth, hire);
+    Date birth(3, 31, 1973);
+    Date hire(10, 1, 2002);
+    Employee manager("Luca", "Suriano", birth, hire);
     cout << endl;
     manager.print();
     
