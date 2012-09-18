@@ -22,16 +22,23 @@ int main() {
     BasicClass object2("Salvatore");
     int int1 = 111, int2 = 999;
     float flo1 = 11.11, flo2 = 99.99;
+    double doub1 = 11.11, doub2 = 99.99;
+    char char1 = 'a', char2 = 'z';
 
     swap_func(object1, object2);
     swap_func(int1, int2);
     swap_func(flo1, flo2);
+    swap_func(doub1, doub2);
+    swap_func(char1, char2);
+
 
     object1.print();
     object2.print();
 
-    cout << int1 << " " << int2 << endl;
-    cout << flo1 << " " << flo2 << endl;
+    cout << int1 << " - " << int2 << endl;
+    cout << flo1 << " - " << flo2 << endl;
+    cout << doub1 << " - " << doub2 << endl;
+    cout << char1 << " - " << char2 << endl;
 
    return(0);
 }
