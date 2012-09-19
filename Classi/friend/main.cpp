@@ -11,14 +11,16 @@ class Account {
     
     public:
     	Account() : user("default") {};
-
-	void print() const {
-	    cout << user << endl;
-	}
+	void print() const;
 
     private:
     	string user;
 };
+
+void Account::print() const
+{
+    cout << user << endl;
+}
 
 void setUsername(Account &str, string strnew) 
 {
