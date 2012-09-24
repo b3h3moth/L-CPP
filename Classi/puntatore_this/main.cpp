@@ -4,7 +4,7 @@ using namespace std;
 /*
 Ciascun oggetto mantiene la copia dei dati membro della classe, tipicamente
 quelli dichiarati come 'private', per cui due oggetti istanze della stessa
-classe lavoreranno su due insiemi diversi di dato mebro; per cio' che concerne 
+classe lavoreranno su due insiemi diversi di dato membro; per cio' che concerne 
 le funzioni membro, il discorso e' totalmente diverso, poiche' esiste una sola
 copia di esse, per cui due oggetti istanze della stessa classe invocheranno
 le medesima copia della funzione membro.
