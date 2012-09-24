@@ -2,6 +2,9 @@
 Una classe proxy permette di nascondere anche i dati membro 'private' ai client
 che utilizzeranno la classe stessa; trattasi di un'ulteriore tecnica per il 
 mascheramento delle informazioni.
+
+Il prezzo da pagare nell'utilizzo di una classe proxy, e' il maggior numero
+di chiamate di funzioni.
 */
 
 class Implementation;

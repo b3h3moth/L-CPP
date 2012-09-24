@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Si include soltanto il file di intestazione della classe proxy.
 #include "Interface.h"
 
 int main() {
