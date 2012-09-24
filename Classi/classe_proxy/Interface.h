@@ -9,8 +9,14 @@ class Implementation;
 class Interface
 {
     public:
-    	// L'interfaccia pubblica e' quasi identica alla classe Implementation
+    	/* L'interfaccia pubblica della classe proxy Interface e' identica alla
+	classe Implementation, fatta eccezione per il costruttore e il 
+	distruttore. */
+	
+	// Costruttore
 	Interface(int);
+
+	// Interfaccia pubblica
 	void setValue(int);
 	int getValue() const;
 
@@ -18,7 +24,7 @@ class Interface
 	~Interface();
     
     private:
-    	/* Utilizzando un puntatore alla classe da nascondere
-	e' possibile nascondere i dettagli implementativi. */
+    	/* Utilizzando un puntatore alla classe da nascondere,
+	e' possibile mascherare i dettagli implementativi. */
     	Implementation *ptr;
 };
