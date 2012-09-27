@@ -21,8 +21,6 @@ operatore;
 
 - Se invece nel left-operand vi e' un oggetto diverso o un valore di uno dei 
 tipi fondamentali, la funzione operatore deve essere resa globale.
-
-
 */
 
 class PhoneNumber
