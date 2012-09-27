@@ -5,7 +5,7 @@ using namespace std;
 
 /* MEMBRI STATIC
 -------------------------------------------------------------------------------
-Un dato membro static consente di avere una sola copia del dato membro, per
+Un dato membro static consente di avere una sola copia del dato membro per
 ciascuna istanza della classe. Possono essere:
 - public;
 - private;
@@ -16,6 +16,9 @@ membro static di una classe sono indipendenti dalle istanze di una classe, per
 cui esistono anche se non è stato istanziato alcun oggetto.
 
 Una funzione membro static non ha il puntatore this, ovviamente.
+
+Le funzioni membro static possono accedere soltanto ai dati membro static della
+classe.
 */
 
 int main() {
