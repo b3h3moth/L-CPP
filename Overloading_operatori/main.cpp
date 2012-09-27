@@ -32,6 +32,9 @@ int main() {
     else
     	cout << "array diversi" << endl;
 
+    cout << "Inserisci il valore: " ; 
+    cin >> obj1 >> obj2 ;
+
     cout << obj1[1] << endl;
     obj1[0] = 10;
     cout << obj1[0] << endl;

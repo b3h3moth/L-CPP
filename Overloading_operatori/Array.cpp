@@ -13,7 +13,7 @@ Array::Array(int array_size)
     // Verifica l'ampiezza dell'array
     size = (array_size > 0 ? array_size : DEFAULT_SIZE);
     
-    // Alloca lo spazio necessarioper un array di dimensione size
+    // Alloca lo spazio necessario per un array di dimensione size
     ptr = new int[size];
 
     // Inizializza ciascun elemento dell'array a 0
