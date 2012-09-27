@@ -12,8 +12,17 @@ operatore, e nello stesso ordine, ossia left-operand e right-operand.
 Ad esempio: 
 operator+(left-operand, right-operand);
 
-Tali funzioni possono essere sia funzioni membro sia funzioni globali, nel qual
-caso conviene renderle 'friend'.
+Tali funzioni possono essere o funzioni membro o funzioni globali, nel qual
+caso conviene renderle 'friend':
+
+- Se una funzione operatore e' implementata come una funzione membro, il 
+left-operand dev'essere o un oggetto o un riferimento all'oggetto della classe 
+operatore;
+
+- Se invece nel left-operand vi e' un oggetto diverso o un valore di uno dei 
+tipi fondamentali, la funzione operatore deve essere resa globale.
+
+
 */
 
 class PhoneNumber
