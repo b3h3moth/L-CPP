@@ -6,13 +6,11 @@ using namespace std;
 
 class String
 {
-    friend ostream &operator<<( ostream &, const String & );
-    friend istream &operator>>( istream &, String & );
+    friend ostream &operator<<(ostream &output, const String &str);
+    friend istream &operator>>(istream &input, String &atr);
     
     public:
-        // Costruttore di conversione di default
         String( const char * = "" );
-	// Costruttore di copia
 	String( const String & ); 
 	~String(); 
 	

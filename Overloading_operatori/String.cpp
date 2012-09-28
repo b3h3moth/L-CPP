@@ -1,29 +1,16 @@
-// Fig. 11.10: String.cpp
-// Member-function definitions for class String.
 #include <iostream>
-using std::cerr;
-using std::cout;
-using std::endl;
-
 #include <iomanip>
-using std::setw;
+#include <cstring> 
+#include <cstdlib>
+using namespace std;
 
-#include <cstring> // strcpy and strcat prototypes
-using std::strcmp;
-using std::strcpy;
-using std::strcat;
+#include "String.h" 
 
-#include <cstdlib> // exit prototype
-using std::exit;
-
-#include "String.h" // String class definition
-
-// conversion (and default) constructor converts char * to String
-String::String( const char *s ) 
-   : length( ( s != 0 ) ? strlen( s ) : 0 )
+// Costruttore di conversione
+String::String( const char *s ) : length( ( s != 0 ) ? strlen( s ) : 0 )
 {
-   cout << "Conversion (and default) constructor: " << s << endl;
-   setString( s ); // call utility function
+    cout << "Costruttore di default (conversione): " << s << endl;
+    setString( s ); 
 } // end String conversion constructor
 
 // copy constructor
@@ -152,48 +139,33 @@ String String::operator()( int index, int subLength ) const
 // return string length
 int String::getLength() const 
 { 
-   return length; 
-} // end function getLength
+    return length; 
+} 
 
-// utility function called by constructors and operator=
+
+// Funzione di utilita'
 void String::setString( const char *string2 )
 {
-   sPtr = new char[ length + 1 ]; // allocate memory
+    sPtr = new char[ length + 1 ];
+    
+    if ( string2 != 0 )
+    	strcpy( sPtr, string2 ); 
+    else
+    	sPtr[ 0 ] = '\0'; 
+} 
 
-   if ( string2 != 0 ) // if string2 is not null pointer, copy contents
-      strcpy( sPtr, string2 ); // copy literal to object
-   else // if string2 is a null pointer, make this an empty string
-      sPtr[ 0 ] = '\0'; // empty string
-} // end function setString 
-
-// overloaded output operator
+// Ridefinizione operatore di output
 ostream &operator<<( ostream &output, const String &s )
 {
-   output << s.sPtr;
-   return output; // enables cascading
-} // end function operator<<
+    output << s.sPtr;
+    return output; 
+} 
 
-// overloaded input operator
+// Ridefinizione operatore di input
 istream &operator>>( istream &input, String &s )
 {
-   char temp[ 100 ]; // buffer to store input
-   input >> setw( 100 ) >> temp;
-   s = temp; // use String class assignment operator
-   return input; // enables cascading
-} // end function operator>>
-
-/**************************************************************************
- * (C) Copyright 1992-2005 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- **************************************************************************/
-
+    char temp[ 100 ]; // buffer to store input
+    input >> setw( 100 ) >> temp;
+    s = temp; // use String class assignment operator
+    return input; // enables cascading
+} 
