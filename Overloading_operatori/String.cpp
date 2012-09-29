@@ -6,137 +6,144 @@ using namespace std;
 
 #include "String.h" 
 
+
 // Costruttore di conversione
-String::String( const char *s ) : length( ( s != 0 ) ? strlen( s ) : 0 )
+String::String(const char *str) : length((str!=0) ? strlen(str) : 0 )
 {
-    cout << "Costruttore di default (conversione): " << s << endl;
-    setString( s ); 
-} // end String conversion constructor
+    cout << "Costruttore di default (conversione): " << str << endl;
+    setString(str); 
+} 
 
-// copy constructor
-String::String( const String &copy ) 
-   : length( copy.length )
+
+// Costruttore di copia
+String::String(const String &copy) : length(copy.length)
 {
-   cout << "Copy constructor: " << copy.sPtr << endl;
-   setString( copy.sPtr ); // call utility function
-} // end String copy constructor
+   cout << "Costruttore di copia " << copy.sPtr << endl;
+   setString(copy.sPtr);
+} 
 
-// Destructor
+
+// Distruttore
 String::~String()
 {
-   cout << "Destructor: " << sPtr << endl;
-   delete [] sPtr; // release pointer-based string memory
-} // end ~String destructor
+    cout << "Distruttore: " << sPtr << endl;
+   delete [] sPtr;
+}
 
-// overloaded = operator; avoids self assignment
-const String &String::operator=( const String &right )
+
+/* Ridefinizione dell'operatore =
+Evita l'auto assegnamento */
+const String &String::operator=(const String &right_operand)
 {
-   cout << "operator= called" << endl;
+    cout << "Invocato operatore = " << endl;
+    
+    if (&right_operand != this)
+    {         
+    	delete [] sPtr;
+	length = right_operand.length;
+	setString( right_operand.sPtr );
+    } else
+    	cout << "Tentativo di assegnare una stringa a se stessa" << endl;
+    
+    return *this;
+} 
 
-   if ( &right != this ) // avoid self assignment
-   {         
-      delete [] sPtr; // prevents memory leak
-      length = right.length; // new String length
-      setString( right.sPtr ); // call utility function
-   } // end if
-   else
-      cout << "Attempted assignment of a String to itself" << endl;
 
-   return *this; // enables cascaded assignments
-} // end function operator=
-
-// concatenate right operand to this object and store in this object
-const String &String::operator+=( const String &right )
+/* Ridefinizione operatore +=
+Aggiunge in coda all'operando destro e memorizza in coda */
+const String &String::operator+=(const String &right_operand)
 {
-   size_t newLength = length + right.length; // new length
-   char *tempPtr = new char[ newLength + 1 ]; // create memory
+    size_t newLength = length + right_operand.length;
+    char *tempPtr = new char[newLength + 1];
+    
+    strcpy(tempPtr, sPtr);
+    strcpy(tempPtr + length, right_operand.sPtr);
+    
+    delete [] sPtr;
+    sPtr = tempPtr;
+    length = newLength;
 
-   strcpy( tempPtr, sPtr ); // copy sPtr
-   strcpy( tempPtr + length, right.sPtr ); // copy right.sPtr
+    return *this;
+}
 
-   delete [] sPtr; // reclaim old space
-   sPtr = tempPtr; // assign new array to sPtr
-   length = newLength; // assign new length to length
-   return *this; // enables cascaded calls
-} // end function operator+=
 
-// is this String empty?
+/* Ridefinizione operatore !
+Verifica se una stringa e' vuota */
 bool String::operator!() const
-{ 
-   return length == 0; 
-} // end function operator! 
-
-// Is this String equal to right String?
-bool String::operator==( const String &right ) const
-{ 
-   return strcmp( sPtr, right.sPtr ) == 0; 
-} // end function operator==
-
-// Is this String less than right String?
-bool String::operator<( const String &right ) const
-{ 
-   return strcmp( sPtr, right.sPtr ) < 0; 
-} // end function operator<
-
-// return reference to character in String as a modifiable lvalue
-char &String::operator[]( int subscript )
 {
-   // test for subscript out of range
-   if ( subscript < 0 || subscript >= length )
-   {
-      cerr << "Error: Subscript " << subscript 
-         << " out of range" << endl;
-      exit( 1 ); // terminate program
-   } // end if
+    return length == 0; 
+}
 
-   return sPtr[ subscript ]; // non-const return; modifiable lvalue
-} // end function operator[]
 
-// return reference to character in String as rvalue
-char String::operator[]( int subscript ) const
+/* Ridefinizione operatore ==
+Verifica se due stringhe sono uguali */
+bool String::operator==(const String &right_operand) const
+{ 
+    return strcmp(sPtr, right_operand.sPtr) == 0; 
+}
+
+
+/* Ridefinizione operatore <
+Verifica se la dimensione di una stringa e' < di un'altra */
+bool String::operator<(const String &right_operand) const
 {
-   // test for subscript out of range
-   if ( subscript < 0 || subscript >= length )
-   {
-      cerr << "Error: Subscript " << subscript 
-           << " out of range" << endl;
-      exit( 1 ); // terminate program
-   } // end if
+    return strcmp(sPtr, right_operand.sPtr) < 0; 
+}
 
-   return sPtr[ subscript ]; // returns copy of this element
-} // end function operator[]
 
-// return a substring beginning at index and of length subLength
-String String::operator()( int index, int subLength ) const
+/* Ridefinizione operatore di subscript []
+Restituisce un riferimento ad un carattere come lvalue modifcabile */
+char &String::operator[](int subscript)
 {
-   // if index is out of range or substring length < 0, 
-   // return an empty String object
-   if ( index < 0 || index >= length || subLength < 0 )  
-      return ""; // converted to a String object automatically
+    if (subscript < 0 || subscript >= length)
+    {
+    	cerr << "Err: Subscript " << subscript << " fuori dai limiti" << endl;
+	exit(1);
+    }
+    
+    return sPtr[subscript]; 
+}
 
-   // determine length of substring
-   int len;
 
-   if ( ( subLength == 0 ) || ( index + subLength > length ) )
-      len = length - index;
-   else
-      len = subLength;
+/* Ridefinizione operatore di subscript [] costante
+Restituisce un riferimento ad un carattere come rvalue non modifcabile */
+char String::operator[](int subscript) const
+{
+    if (subscript<0 || subscript>=length)
+    {
+    	cerr << "Err: Subscript " << subscript << " fuori dai limiti" << endl;
+	exit(1);
+    }
+    
+    return sPtr[subscript]; 
+}
 
-   // allocate temporary array for substring and 
-   // terminating null character
-   char *tempPtr = new char[ len + 1 ];
 
-   // copy substring into char array and terminate string
-   strncpy( tempPtr, &sPtr[ index ], len );
-   tempPtr[ len ] = '\0';
+/* Ridefinizione operatore ()
+Restituisce una stringa che inizia a index di lunghezza subLength */
+String String::operator()(int index, int subLength) const
+{
+    if (index<0 || index>=length || subLength<0)
+    	return ""; 
+    
+    int len;
+    
+    if ((subLength==0) || (index+subLength>length))
+    	len = length - index;
+    else
+    	len = subLength;
+    
+    char *tempPtr = new char[ len + 1 ];
+    
+    strncpy(tempPtr, &sPtr[index], len);
+    tempPtr[len] = '\0';
+    
+    String tempString(tempPtr);
+    delete [] tempPtr;
+    return tempString;
+}
 
-   // create temporary String object containing the substring
-   String tempString( tempPtr );
-   delete [] tempPtr; // delete temporary array
-   return tempString; // return copy of the temporary String
-} // end function operator()
-
-// return string length
+// Restituisce la lunghezza di una stringa
 int String::getLength() const 
 { 
     return length; 
@@ -144,14 +151,14 @@ int String::getLength() const
 
 
 // Funzione di utilita'
-void String::setString( const char *string2 )
+void String::setString(const char *string2)
 {
-    sPtr = new char[ length + 1 ];
+    sPtr = new char[length+1];
     
-    if ( string2 != 0 )
-    	strcpy( sPtr, string2 ); 
+    if (string2!=0)
+    	strcpy(sPtr, string2); 
     else
-    	sPtr[ 0 ] = '\0'; 
+    	sPtr[0] = '\0'; 
 } 
 
 // Ridefinizione operatore di output
@@ -164,8 +171,8 @@ ostream &operator<<( ostream &output, const String &s )
 // Ridefinizione operatore di input
 istream &operator>>( istream &input, String &s )
 {
-    char temp[ 100 ]; // buffer to store input
-    input >> setw( 100 ) >> temp;
-    s = temp; // use String class assignment operator
-    return input; // enables cascading
+    char temp[100]; 
+    input >> setw(100) >> temp;
+    s = temp; 
+    return input;
 } 

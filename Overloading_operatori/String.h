@@ -10,65 +10,50 @@ class String
     friend istream &operator>>(istream &input, String &atr);
     
     public:
-        String( const char * = "" );
-	String( const String & ); 
+        String(const char *str = "");
+	String(const String &copy); 
 	~String(); 
 	
-	const String &operator=( const String & ); // assignment operator
-	const String &operator+=( const String & ); // concatenation operator
-
-   bool operator!() const; // is String empty?
-   bool operator==( const String & ) const; // test s1 == s2
-   bool operator<( const String & ) const; // test s1 < s2
-
-   // test s1 != s2
-   bool operator!=( const String &right ) const
-   { 
-      return !( *this == right ); 
-   } // end function operator!=
-
-   // test s1 > s2
-   bool operator>( const String &right ) const
-   { 
-      return right < *this; 
-   } // end function operator>
- 
-   // test s1 <= s2
-   bool operator<=( const String &right ) const
-   { 
-      return !( right < *this ); 
-   } // end function operator <=
-
-   // test s1 >= s2
-   bool operator>=( const String &right ) const
-   { 
-      return !( *this < right ); 
-   } // end function operator>=
-
-   char &operator[]( int ); // subscript operator (modifiable lvalue)
-   char operator[]( int ) const; // subscript operator (rvalue)
-   String operator()( int, int = 0 ) const; // return a substring
-   int getLength() const; // return string length
-private:
-   int length; // string length (not counting null terminator)
-   char *sPtr; // pointer to start of pointer-based string
-
-   void setString( const char * ); // utility function
-}; // end class String
+	const String &operator=(const String &right_operand); 
+	const String &operator+=(const String &right_operand); 
+	bool operator!() const;
+	bool operator==(const String &right_operand) const; 
+	bool operator<(const String &right_operand) const;
+	
+	// Verifica se una stringa e' diversa da un'altra
+	inline bool operator!=(const String &right_operand) const
+	{
+	    return !(*this == right_operand);
+	}
+	
+	// Verifica se la dimensione di una stringa e' > di un'altra
+	bool operator>(const String &right_operand) const
+	{
+	    return right_operand < *this;
+	}
+	
+	// Verifica se la dimensione di una stringa e' <= di un'altra
+	bool operator<=(const String &right_operand) const
+	{ 
+	    return !(right_operand < *this);
+	} 
+	
+	// Verifica se la dimensione di una stringa e' >= di un'altra
+	bool operator>=(const String &right_operand) const
+	{
+	    return !(*this < right_operand);
+	}
+	
+	char &operator[](int subscript);
+	char operator[](int subscript) const;
+	String operator()(int index, int subLength= 0) const;
+	int getLength() const;
+    
+    private:
+    	int length;
+	char *sPtr; 
+	
+	void setString(const char *string2); 
+};
 
 #endif
-
-/**************************************************************************
- * (C) Copyright 1992-2005 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- **************************************************************************/
