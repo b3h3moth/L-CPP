@@ -3,6 +3,7 @@ using namespace std;
 
 #include "PhoneNumber.h"
 #include "Array.h"
+#include "String.h"
 
 int main() {
     cout << "--- CLASS PhoneNumber.h ---" << endl;
