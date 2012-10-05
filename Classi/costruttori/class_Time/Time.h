@@ -1,11 +1,10 @@
 #ifndef TIME_H
 #define TIME_H
 
-class Time
-{
+class Time {
     public:
     	Time(int h = 0, int m = 0, int s = 0);	// Costruttore di default
-	
+
 	void setTime(int h, int m, int s);	// Setta ora, minuti, secondi
 	void setHour(int h);		// Imposta l'ora
 	void setMinute(int m);		// Imposta i minuti
@@ -19,9 +18,9 @@ class Time
 	void printStandard();		// Ora in formato standard
     
     private:
-    	int hour;		// 0 - 23
-	int minute;		// 0 - 59
-	int second;		// 0 - 59
+	int hour;					// 0 - 23
+	int minute;					// 0 - 59
+	int second;					// 0 - 59
 };
 
 #endif
