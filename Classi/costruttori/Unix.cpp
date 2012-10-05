@@ -11,6 +11,9 @@ Unix::Unix()
     arch_name = "ppc";
 }
 
+/* Il costruttore di seguito inizializza solo due attributi,
+cosa ne sara' del  terzo? Verificare il test nel main per
+scoprirlo. */
 Unix::Unix(string k_name, string k_rel)
 {
     kernel_name = k_name;
