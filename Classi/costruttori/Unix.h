@@ -12,21 +12,18 @@ oggetti, ovvero i dati membro.
 
 Il nome del costruttore di una classe coincide col nome della della classe 
 stessa, esso inoltre non prevede la restituzione di valori.
-
-Il C++ utilizza un costruttore di default, creato automaticamente, qualora non 
-fosse implementato nella classe.
 */
 
-class Unix {
+class Unix {    
     public:
-        /* Il Costruttore di default non prende argomenti, in questo caso e' 
-        stato inserito nella classe ma qualora non ci fosse stato, il C++ ne
-        avrebbe inserito uno senza argomenti. */
-    	Unix();
-
-        /* Quest'altro costruttore consente la creazione di un oggetto e
-        la relativa inizializzazione di due attributi, gli altri saranno
-        lasciati al valore di default. */
+        /* Il Costruttore di default e' un costruttore che non prende argomenti,
+        in questo caso e' stato inserito nella classe ma qualora non ci fosse 
+        stato, il C++ ne avrebbe inserito uno automaticamente. */
+        Unix();
+                                                 
+        /* Un costruttore puo' avere dei parametri, in questo caso ve ne sono 
+        due, per cui, quando nel main sara' istanziato un oggetto, esso potra' 
+        essere inizializzato mediante due argomenti. */ 
         Unix(string k_name, string k_rel);
 
         string get_Kernel_Name() const;
