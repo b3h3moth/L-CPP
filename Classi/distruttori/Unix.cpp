@@ -19,6 +19,8 @@ allocati dal costruttore, ed e' proprio questa l'utilita', ossia fornire un
 mezzo con cui "far pulizia". */
 Unix::~Unix()
 {
+    cout << "Free memory" << endl;
+
     delete [] kernel_name;
     delete [] kernel_release;
 }
