@@ -12,6 +12,8 @@ oggetti, ovvero i dati membro.
 
 Il nome del costruttore di una classe coincide col nome della della classe 
 stessa, esso inoltre non prevede la restituzione di valori.
+
+Il costruttore puo' tranquillamente essere definito inline. 
 */
 
 class Unix {    
@@ -23,8 +25,8 @@ class Unix {
                                                  
         /* Un costruttore puo' avere dei parametri, in questo caso ve ne sono 
         due, per cui, quando nel main sara' istanziato un oggetto, esso potra' 
-        essere inizializzato mediante due argomenti. */ 
-        Unix(string k_name, string k_rel);
+        essere inizializzato mediante due argomenti. */
+        Unix(string k_name, string k_rel );
 
         string get_Kernel_Name() const;
         string get_Kernel_Release() const;
