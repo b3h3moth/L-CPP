@@ -12,7 +12,10 @@ class Unix {
         modo un nuovo oggetto istanza della classe Unix, sara' creato ed
         inizializzato con valori consisenti; tale costruttore sostituisce il 
         costruttore di default, per cui in questo caso non serve scriverlo, 
-        e ne il compilatore lo produrra'. */
+        e ne' il compilatore lo produrra', ovviamente.
+        
+        La chiamata pertanto sara': Class object;
+        senza parentesi tonde. */
         Unix(string k_name = "linux", string k_rel = "3.2.0");
 
         string get_Kernel_Name() const;
