@@ -20,8 +20,8 @@ fosse implementato nella classe.
 class Unix {
     public:
         /* Il Costruttore di default non prende argomenti, in questo caso e' 
-        stato inserito ma se non ci fosse stato sarebbe stato inserito
-        ugualmente dal C++. */
+        stato inserito nella classe ma qualora non ci fosse stato, il C++ ne
+        avrebbe inserito uno senza argomenti. */
     	Unix();
 
         /* Quest'altro costruttore consente la creazione di un oggetto e
@@ -32,7 +32,6 @@ class Unix {
         string get_Kernel_Name() const;
         string get_Kernel_Release() const;
         string get_Architecture_Name() const;
-        string get_Operating_System_Name() const;
 
         void system_Info();
 
