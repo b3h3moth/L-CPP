@@ -25,7 +25,8 @@ class Unix {
                                                  
         /* Un costruttore puo' avere dei parametri, in questo caso ve ne sono 
         due, per cui, quando nel main sara' istanziato un oggetto, esso potra' 
-        essere inizializzato mediante due argomenti. */
+        essere inizializzato mediante due argomenti; i costruttori essendo
+        funzioni possono essere ridefinite, come nel caso in oggetto. */
         Unix(string k_name, string k_rel );
 
         string get_Kernel_Name() const;
