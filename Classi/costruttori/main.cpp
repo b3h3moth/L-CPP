@@ -3,8 +3,9 @@
 using namespace std;
 
 int main() {
-    /* Il costruttore e' eseguito automaticamente non appena l'oggetto viene 
-    creato, in questo caso  e' stato invocato il costruttore di default. */
+    /* Quando un oggetto viene istanziato serza argomenti, il compilatore invoca
+    automaticamente il costruttore di default, questo e' il motivo per il quale 
+    una classe puo' avere un solo costruttore di default. */
     Unix obj;
 
     // Al nuovo oggetto venogono forniti due argomenti
