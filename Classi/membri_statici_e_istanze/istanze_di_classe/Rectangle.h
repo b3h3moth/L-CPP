@@ -13,6 +13,9 @@ class Rectangle
         double getArea() const { return width * length; };
 
     private:
+    /* Nell'OOP le variabili membro definite nella classe, width e length, sono
+    dette variabili d'istanza, perche' ciascun istanza della classe ha la
+    propria copia di tali variabili. */
         double width;
         double length;
 };
