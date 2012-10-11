@@ -1,7 +1,9 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 #include "Employee.h"
+#include "Count.h"
 
 /* MEMBRI STATIC
 -------------------------------------------------------------------------------
@@ -47,5 +49,23 @@ int main() {
     cout << "Tot. impiegati dolo l'eliminazione: " << 
     	Employee::getCount() << endl;
 
-    return(0);
+    // Classe Count
+    cout << "\nClasse Count" << endl;
+    
+    /* Ad ogni nuova istanza della classe Count, il valore di count_obj sara'
+    aumentato di una unita'. */
+    Count obj1;
+    cout << "count_obj: " << obj1.getObjCount() << endl;
+    
+    Count obj2;
+    cout << "count_obj: " << obj2.getObjCount() << endl;
+    
+    Count obj3;
+    cout << "count_obj: " << obj3.getObjCount() << endl;
+
+    /* Per concludere, il concetto espresso in questo esempio e' il seguente;
+    sebbene vi sono ben tre istanze della classe Count, ossia obj1, obj2 e obj3,
+    c'e' solo una copia della variabile membro statica count_obj. */
+
+    return(EXIT_SUCCESS);
 }
