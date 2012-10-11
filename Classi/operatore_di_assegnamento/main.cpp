@@ -13,8 +13,9 @@ int main() {
 
     /* Il costruttore di copia e' un costruttore particolare che viene 
     invocato quando un nuovo ogetto e' istanziato ed inizializzato con un altro
-    oggetto; viene utilizzato l'operatore '=' che assegna i dati di un oggetto
-    ad un altro oggetto. */
+    oggetto; in questo caso viene utilizzato l'operatore di assegnamento '=' che
+    assegna i dati di un oggetto a un altro oggetto, vi e' una copia membro a
+    membro degli attributi, ovvero i dati membro privati. */
     test2 = test;
 
     test.print();
