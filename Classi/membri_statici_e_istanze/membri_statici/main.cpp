@@ -1,9 +1,11 @@
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
 using namespace std;
 
 #include "Employee.h"
 #include "Count.h"
+#include "Budget.h"
 
 /* MEMBRI STATIC
 -------------------------------------------------------------------------------
@@ -66,6 +68,30 @@ int main() {
     /* Per concludere, il concetto espresso in questo esempio e' il seguente;
     sebbene vi sono ben tre istanze della classe Count, ossia obj1, obj2 e obj3,
     c'e' solo una copia della variabile membro statica count_obj. */
+
+    // Classe Budget
+    cout << "\nClasse Budget" << endl;
+
+    const int TOT_DIVIONS = 3;
+    Budget divisions[TOT_DIVIONS];
+
+    // Richiesta budget per ciascuna divisione
+    for (int i = 0; i<TOT_DIVIONS; i++) {
+        double budget_amount;
+        cout << "Inserire budget per la divisione '" << i+1 << "' : ";
+        cin >> budget_amount;
+        divisions[i].addBudget(budget_amount);
+    }
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "\nRichiesta budget delle visioni:\n";
+    for (int i = 0; i<TOT_DIVIONS; i++) {
+        cout << " divisione " << i+1 << "$ ";
+        cout << divisions[i].getDivisionBudget() << endl;
+    }
+
+    cout << "Richiesta totale di budget: $ ";
+    cout << divisions[0].getCompanyBudget() << endl;
 
     return(EXIT_SUCCESS);
 }
