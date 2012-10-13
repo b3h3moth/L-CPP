@@ -3,7 +3,7 @@
 
 #include <string>
 
-/* Non sempre e' possibile utilizzare l'assegnamento membro a membro, mediante
+/* Non sempre e' possibile utilizzare l'assegnamento membro a membro; mediante
 la classe StudentScore si evidenzia questa problematica. */
 
 const double DEFAULT_SCORE = 0.0;
@@ -11,8 +11,11 @@ const double DEFAULT_SCORE = 0.0;
 class StudentScore
 {
     public:
+        // Costruttore
         StudentScore(string name, int num_scores);
-        StudentScore(StudentScore &object);
+        // Costruttore di copia
+        StudentScore(const StudentScore &object);
+        // Distruttore
         ~StudentScore() { delete [] test_scores; };
         
         // Setta un valore per il punteggio del test

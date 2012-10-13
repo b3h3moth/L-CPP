@@ -12,11 +12,18 @@ StudentScore::StudentScore(string name, int num_scores)
 }
 
 /* Costruttore di copia
-E' un costruttore particolare, invocato quando un oggetto viene  inizializzato 
-con dati di un altro oggetto; ha le medesime caratteristiche degli altri 
-costruttori, ad eccezione del parametro, che dev'essere un riferimento allo
-stesso tipo di classe dell'oggetto. */
-StudentScore::StudentScore(StudentScore &object)
+E' un costruttore speciale poiche' serve per inizializzare un oggetto 
+tramite un altro oggetto, e' una funzione membro con lo stesso nome della classe
+e ha come argomento un riferimento - ancor meglio se costante - ad un oggetto 
+della medesima classe.
+
+Sostanzialmene ha le stesse caratteristiche degli altri costruttori, ad eccezion
+fatta del parametro, viene inoltre invocato nei seguenti casi:
+- Inizializzazione esplicita;
+- Passaggio per valore ad una funzione;
+- Restituzione di un oggetto temporaneo.
+*/
+StudentScore::StudentScore(const StudentScore &object)
 {
     student_name = object.student_name;
     num_test_scores = object.num_test_scores;
