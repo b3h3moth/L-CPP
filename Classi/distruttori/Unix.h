@@ -10,8 +10,9 @@ class Unix
         /* Un distruttore e' una funzione membro che e' automaticamente 
         invocata quando un oggetto e' distrutto/eliminato; ha lo stesso nome
         della classe preceduto dal simbolo tilde '~', inoltre come un 
-        costruttore, non ha tipo di ritorno, infine i cosruttori non accettano 
-        argomenti. */
+        costruttore, non ha tipo di ritorno, tuttavia i cosruttori non accettano
+        argomenti.Sono necessari solo se l'oggetto presenta un'estensione 
+        dinamica.*/
         ~Unix();
 
         const char *getKernelName() const { return kernel_name; }
