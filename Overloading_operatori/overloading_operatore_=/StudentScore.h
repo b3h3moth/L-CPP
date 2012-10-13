@@ -34,7 +34,7 @@ class StudentScore
         double getTestScore(int index) const { return test_scores[index]; };
 
         // Ridefinizione operatore =
-        void operator=(const StudentScore &right_side);
+        const StudentScore operator=(const StudentScore &right_side);
 
     private:
         string student_name;    // Nome dello studente

@@ -23,7 +23,7 @@ StudentScore::StudentScore(const StudentScore &object)
 }
 
 // Ridefinizione operatore =
-void StudentScore::operator=(const StudentScore &right_side)
+const StudentScore StudentScore::operator=(const StudentScore &right_side)
 {
     delete [] test_scores;
 
@@ -33,4 +33,6 @@ void StudentScore::operator=(const StudentScore &right_side)
 
     for(int i=0; i<num_test_scores; i++)
         test_scores[i] = right_side.test_scores[i];
+
+    return *this;
 }
