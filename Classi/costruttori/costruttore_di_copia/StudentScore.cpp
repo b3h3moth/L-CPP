@@ -22,6 +22,9 @@ fatta del parametro, viene inoltre invocato nei seguenti casi:
 - Inizializzazione esplicita;
 - Passaggio per valore ad una funzione;
 - Restituzione di un oggetto temporaneo.
+
+Quando un oggetto ha dati membro allocati dinamicamente, come il caso in esame,
+e' necessario creare esplicitamente in costruttore di copia.
 */
 StudentScore::StudentScore(const StudentScore &object)
 {
