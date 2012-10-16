@@ -22,6 +22,7 @@ void FeetInches::simplify()
     }
 }
 
+// Ridefinizione operatore unario +
 FeetInches FeetInches::operator+(const FeetInches &right)
 {
     FeetInches tmp;
@@ -33,6 +34,7 @@ FeetInches FeetInches::operator+(const FeetInches &right)
     return tmp;
 }
 
+// Ridefinizione operatore unario -
 FeetInches FeetInches::operator-(const FeetInches &right)
 {
     FeetInches tmp;
@@ -41,5 +43,22 @@ FeetInches FeetInches::operator-(const FeetInches &right)
     tmp.feet = feet + right.feet;
     tmp.simplify();
 
+    return tmp;
+}
+
+// Ridefinizione operatore ++ prefisso
+FeetInches FeetInches::operator++()
+{
+    ++inches;
+    simplify();
+    return *this;
+}
+
+// Ridefinizione operatore ++ postfisso
+FeetInches FeetInches::operator++(int)
+{
+    FeetInches tmp(feet, inches);
+    ++inches;
+    simplify();
     return tmp;
 }
