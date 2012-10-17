@@ -26,7 +26,7 @@ int main() {
     else
         cout << "father != mum" << endl;
 
-    if (me == me2) 
+    if (me.operator==(me2)) 
         cout << "me == me2" << endl;
     else
         cout << "me != me2" << endl;
