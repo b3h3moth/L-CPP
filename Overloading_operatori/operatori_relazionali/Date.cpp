@@ -32,6 +32,7 @@ bool Date::operator>(Date &dright)
             return false;
     }
 }
+
 bool Date::operator<(Date &dright)
 {
     if (year < dright.year)
