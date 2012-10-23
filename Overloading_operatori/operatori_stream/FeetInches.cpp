@@ -31,6 +31,7 @@ ostream &operator<<(ostream &output, const FeetInches &obj)
 
 istream &operator>>(istream &input, FeetInches &obj)
 {
+
     cout << "Feet: ";
     input >> obj.feet;
     cout << "Inches: ";

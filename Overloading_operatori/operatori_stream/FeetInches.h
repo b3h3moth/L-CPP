@@ -12,6 +12,8 @@ using namespace std;
 class FeetInches
 {
     public:
+        // Costruttore di default
+        FeetInches() { feet = 0; inches = 0; }
         // Costruttore
         FeetInches(int f, int i);
 
@@ -22,7 +24,7 @@ class FeetInches
 
         // Ridefinizione degli operatori inserimento ed estrazione sullo stream
         friend ostream &operator<<(ostream &stream, const FeetInches &obj);
-        friend istream &operator>>(istream &stream, const FeetInches &obj);
+        friend istream &operator>>(istream &stream, FeetInches &obj);
 
     private:
         int feet;
