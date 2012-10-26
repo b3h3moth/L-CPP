@@ -1,11 +1,20 @@
 #ifndef FINALEXAM_H
 #define FINALEXAM_H
 
-#include "GradeActivity.h"
+#include "GradedActivity.h"
 
-/* La classe FinalExam e' una specializzazione della classe GradeActivity */
+/* La classe FinalExam e' una specializzazione della classe GradedActivity;
+public e' lo specificatore d'accesso della classe base, sta ad indicare che i
+membri pubblici della classe base diventeranno membri pubblici anche della 
+classe derivata.
 
-class FinalExam : public GradeActivity
+FinalExam e' la classe derivata, GradedActivity la classe base.
+
+I membri private della classe base non possono essere acceduti direttamente 
+dalla classe derivata, ma solo mediante le funzioni membro
+*/
+
+class FinalExam : public GradedActivity
 {
     public:
         // Costruttore di default
