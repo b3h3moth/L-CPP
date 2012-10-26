@@ -1,6 +1,6 @@
-#include "GradeActivity.h"
+#include "GradedActivity.h"
 
-char GradeActivity::getLetterGrade() const
+char GradedActivity::getLetterGrade() const
 {
     char letter_grade;
 

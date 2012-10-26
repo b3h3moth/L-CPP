@@ -1,6 +1,6 @@
 #include "FinalExam.h"
 
-int FinalExam::set(int question, int missed)
+void FinalExam::set(int question, int missed)
 {
     double numeric_score;
 
