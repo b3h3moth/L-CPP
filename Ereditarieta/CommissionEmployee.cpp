@@ -5,12 +5,9 @@ using namespace std;
 
 // Il costruttore
 CommissionEmployee::CommissionEmployee(const string &first, const string &last,
-        const string &ssn, double sales, double rate)
+        const string &ssn, double sales, double rate) 
+: first_name(first), last_name(last), social_security_number(ssn)
 {
-    first_name = first;
-    last_name = last;
-    social_security_number = ssn;
-    
     setGrossSales(sales);
     setCommissionRate(rate);
 }
