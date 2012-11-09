@@ -31,7 +31,10 @@ class CommissionEmployee
 
         void print() const;
 
-    private:
+/* Dichiarando i dati membro protected saranno accessibili da tutte le classi
+derivate, se fossero stati dichiarati private non sarebbero potuti essere 
+acceduti dalla classe derivata */
+    protected:
         string first_name;
         string last_name;
         string social_security_number;  // Numero INPS
