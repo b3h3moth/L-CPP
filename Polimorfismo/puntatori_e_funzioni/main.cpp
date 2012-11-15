@@ -43,16 +43,33 @@ int main() {
     alla classe base.
    
     Ovviamente questo e' il caso piu' interessante, risulta chiaro che un
-    oggetto della classe derivata "e' un" oggetto della classe base, la funzione
-    chiamata inoltre e' quella della classe base.
-   
-    Se si facesse l'opposto, ossia se si assegnasse ad un puntatore della classe
-    base l'indirizzo di un oggetto della classe derivata, si incorrerebbe in un 
-    errore, poiche' un oggetto della classe base "non e'" un oggetto della 
-    classe derivata. */
+    oggetto della classe derivata "e' un" oggetto della classe base; la funzione
+    invocata peraltro  e' quella della classe base, questo perche' la classe
+    derivata ha ereditato tutte le funzioni pubbliche della classe base. */
+
     ptr_obj_base = &obj_der;
     cout << "\n" << endl;
     ptr_obj_base->print();
+   
+    /* Se si facesse l'opposto, ossia se si assegnasse ad un puntatore della 
+    classe derivata l'indirizzo di un oggetto della classe base, si incorrerebbe
+    in un errore, poiche' un oggetto della classe base "non e'" un oggetto della
+    classe derivata:
+    
+    ptr_obj_der = &obj_base;
+    
+    invalid conversion from 'CommissionEmployee*' to 'CommissionEmployeePlus*'
+    
+    Mediante un puntatore alla classe base e' possibile invocare soltanto
+    funzioni della classe base, per cui, se ad un puntatore alla classe base 
+    dovesse essere assegnato un oggetto della classe derivata e, mediante esso,
+    si tentasse di invocare una funzione della classe derivata, si incorrerebbe
+    in un errore:
+
+    ptr_obj_base->getBaseSalary();
+    
+    'class CommissionEmployee' has no member named 'getBaseSalary'
+    */
 
     return(EXIT_SUCCESS);
 }
