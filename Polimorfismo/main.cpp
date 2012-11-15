@@ -44,11 +44,15 @@ int main() {
    
     Ovviamente questo e' il caso piu' interessante, risulta chiaro che un
     oggetto della classe derivata "e' un" oggetto della classe base, la funzione
-    chiamata inoltre e' quella della classe base. */
+    chiamata inoltre e' quella della classe base.
+   
+    Se si facesse l'opposto, ossia se si assegnasse ad un puntatore della classe
+    base l'indirizzo di un oggetto della classe derivata, si incorrerebbe in un 
+    errore, poiche' un oggetto della classe base "non e'" un oggetto della 
+    classe derivata. */
     ptr_obj_base = &obj_der;
     cout << "\n" << endl;
     ptr_obj_base->print();
-
 
     return(EXIT_SUCCESS);
 }
