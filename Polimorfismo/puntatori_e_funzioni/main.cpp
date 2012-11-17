@@ -8,22 +8,22 @@ using namespace std;
 
 int main() {
     // Si crea un oggetto della classe base
-    CommissionEmployee obj_base("John","Doe","123-45-678",1000,.06);
+    CommissionEmployee obj_base("John","Doe","123-45-678",1000,.50);
 
     // Si crea un puntatore alla classe base
     CommissionEmployee *ptr_obj_base = 0;
 
     // Si crea un oggetto della classe derivata
-    CommissionEmployeePlus obj_der("Frank","Smith","098-76-543",.04,300);
+    CommissionEmployeePlus obj_der("Frank","Smith","098-76-543",2500,.50,500);
 
     // Si crea un puntatore alla classe derivata
     CommissionEmployeePlus *ptr_obj_der = 0;
 
     cout << fixed << setprecision(2);
 
-    cout << "Stampa gli oggetti della classe base e derivata:\n" << endl;
+    cout << ".................... Clase Base     ..................." << endl;
     obj_base.print();
-    cout << "\n" << endl;
+    cout << "\n.................... Clase Derivata ..................." << endl;
     obj_der.print();
 
     /* Assegna l'indirizzo di un oggetto della classe base ad un puntatore alla
@@ -41,12 +41,12 @@ int main() {
 
     /* Assegna l'indirizzo di un oggetto della classe derivata ad un puntatore 
     alla classe base.
-   
-    Ovviamente questo e' il caso piu' interessante, risulta chiaro che un
-    oggetto della classe derivata "e' un" oggetto della classe base; la funzione
-    invocata peraltro  e' quella della classe base, questo perche' la classe
-    derivata ha ereditato tutte le funzioni pubbliche della classe base. */
 
+    Ovviamente questo e' il caso piu' interessante, risulta chiaro che un
+    oggetto della classe derivata "e' un" (e' anche un) oggetto della classe 
+    base; la funzione invocata peraltro e' quella della classe base, questo 
+    perche' la classe derivata ha ereditato tutte le funzioni pubbliche della 
+    classe base. */
     ptr_obj_base = &obj_der;
     cout << "\n" << endl;
     ptr_obj_base->print();
@@ -57,19 +57,24 @@ int main() {
     classe derivata:
     
     ptr_obj_der = &obj_base;
-    
     invalid conversion from 'CommissionEmployee*' to 'CommissionEmployeePlus*'
     
     Mediante un puntatore alla classe base e' possibile invocare soltanto
     funzioni della classe base, per cui, se ad un puntatore alla classe base 
     dovesse essere assegnato un oggetto della classe derivata e, mediante esso,
     si tentasse di invocare una funzione della classe derivata, si incorrerebbe
-    in un errore:
+    in un errore[1]:
 
     ptr_obj_base->getBaseSalary();
-    
     'class CommissionEmployee' has no member named 'getBaseSalary'
     */
 
     return(EXIT_SUCCESS);
 }
+
+/* [1] DOWNCASTING: 
+E' concesso accedere ai memdri della classe derivata mediante un puntatore alla
+classe base solo se si effettua esplicitamente un casting del puntatore ad un 
+puntatore della classe derivata; il downcasting pertanto consente di effettuare 
+specifiche operazioni della classe derivata mediante un puntatore alla classe 
+base. */
