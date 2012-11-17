@@ -4,12 +4,14 @@
 #include <string>
 using namespace std;
 
-// Inclusione del file di intestazione della classe base
+//Inclusione del file di intestazione della classe base
 #include "CommissionEmployee.h"
 
-/* Classe che identifica un agente di vendita con provvigioni e fisso mensile
-questa nuova classe eredita dalla classe base tutte i membri della classe 
-base */
+/* Un oggetto della classe derivata puo' sempre essere visto come un oggetto 
+della classe base, ma non viceversa. */
+
+/* Classe derivata che identifica un agente di vendita con provvigioni e fisso 
+mensile, questa nuova classe eredita dalla classe base tutti i suoi membri. */
 class CommissionEmployeePlus : public CommissionEmployee
 {
     public:
@@ -17,7 +19,7 @@ class CommissionEmployeePlus : public CommissionEmployee
                 const string &ssn, double sales = 0.0, double rate = 0.0,
                 double salary = 0.0);
 
-        // Imposta il fisso
+        // Funzioni per impostare e restituire il fisso mensile
         void setBaseSalary(double base);
         double getBaseSalary() const;
 
