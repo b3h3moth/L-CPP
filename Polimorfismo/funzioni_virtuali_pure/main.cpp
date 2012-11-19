@@ -3,7 +3,8 @@
 using namespace std;
 
 /* Una classe base astratta contiene una o piu' funzioni virtuali pure, ed il
-suo scopo primatio e' di utilizzata come classe base in una gerarchia di classi.
+suo scopo primario e' di essere utilizzata come classe base in una gerarchia di
+classi.
 
 La classe Account e' una classe base astratta.*/
 class Account
@@ -19,8 +20,8 @@ class Account
 };
 
 /* Una classe concreta eredita tutte le funzioni virtuali della classe base 
-astratta, con l'obbligo di ridefinire ciascuna funzione virtuale pura, che nella
-classe base astratta non è completa.
+astratta, con l'obbligo di riscrivere (overriding) ciascuna funzione virtuale 
+pura, che nella classe base astratta non è completa.
 
 La classe User e' una classe concreta. */
 class User : public Account
