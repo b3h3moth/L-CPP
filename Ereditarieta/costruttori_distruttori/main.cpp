@@ -6,7 +6,7 @@ using namespace std;
 costruttore di classe base e di classe derivata e del distruttore di classe 
 base e di classe derivata:
 
-- Il costruttore di classe base viene chiamato prima del costruttore di classe 
+- I costruttori di classe base sono chiamati prima dei costruttori di classe 
   derivata;
 
 - I distruttori sono chiamati in ordine inverso, prima quello di classe derivate
