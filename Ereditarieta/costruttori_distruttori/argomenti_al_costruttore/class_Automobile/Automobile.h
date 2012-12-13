@@ -26,7 +26,7 @@ class Automobile
 
         // Costruttore con argomenti definiti dall'utente
         Automobile(string marca_auto, int modello_auto, 
-                   int kilometraggio_auto, double prezzo_auto)
+                   int kilometraggio_auto, int prezzo_auto)
         {
             marca = marca_auto;
             modello = modello_auto;
@@ -37,13 +37,13 @@ class Automobile
         string getMarca() const { return marca; }
         int getModello() const { return modello; }
         int getKilometraggio() const { return kilometraggio; }
-        double getPrezzo() const { return prezzo; }
+        int getPrezzo() const { return prezzo; }
 
     private:
         string marca;
         int modello;
         int kilometraggio;
-        double prezzo;
+        int prezzo;
 };
 
 #endif

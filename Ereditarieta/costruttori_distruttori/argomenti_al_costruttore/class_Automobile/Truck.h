@@ -7,7 +7,7 @@ using namespace std;
 
 /* La class Truck e' una specializzazione della class Automobile, fornisce come
 informazione aggiuntiva il tipo di guida, se con 2 o 4 ruote motrici */
-class Truck : Automobile
+class Truck : public Automobile
 {
     public:
         // Costruttore di default
@@ -20,7 +20,7 @@ class Truck : Automobile
                 ruote_motrici = rm;
             }
 
-        int getRuoteMotrici() const { return ruote_motrici; }
+        string getRuoteMotrici() const { return ruote_motrici; }
 
     private:
         string ruote_motrici;

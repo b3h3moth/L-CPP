@@ -15,7 +15,7 @@ class Car : public Automobile
 
         // Costruttore con argomenti, passati al costruttore della classe base
         Car(string marca_car, int modello_car, int kilometraggio_car, 
-                double prezzo_car, int portiere_car) :
+                int prezzo_car, int portiere_car) :
             Automobile(marca_car, modello_car, kilometraggio_car, prezzo_car) {
                 portiere = portiere_car;
             }
