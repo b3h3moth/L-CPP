@@ -11,7 +11,7 @@ class Truck : Automobile
 {
     public:
         // Costruttore di default
-        Truck() { motrice = ""; }
+        Truck() { ruote_motrici = ""; }
 
         // Costruttore con argomenti, passati al costruttore della classe base
         Truck(string marca_rm, int modello_rm, int kilometraggio_rm,
