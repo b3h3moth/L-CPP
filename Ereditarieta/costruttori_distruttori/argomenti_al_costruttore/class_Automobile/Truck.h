@@ -14,9 +14,9 @@ class Truck : Automobile
         Truck() { ruote_motrici = ""; }
 
         // Costruttore con argomenti, passati al costruttore della classe base
-        Truck(string marca_rm, int modello_rm, int kilometraggio_rm,
-                double prezzo_rm, string rm) :
-            Automobile(marca_rm, modello_rm, kilometraggio_rm, prezzo_rm) {
+        Truck(string marca_trk, int modello_trk, int kilometraggio_trk,
+                double prezzo_trk, string rm) :
+            Automobile(marca_trk, modello_trk, kilometraggio_trk, prezzo_trk) {
                 ruote_motrici = rm;
             }
 
