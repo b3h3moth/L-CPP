@@ -3,16 +3,7 @@
 
 #include "GradedActivity.h"
 
-/* La classe FinalExam e' una specializzazione della classe GradedActivity;
-public e' lo specificatore d'accesso della classe base, sta ad indicare che i
-membri pubblici della classe base diventeranno membri pubblici anche della 
-classe derivata.
-
-FinalExam e' la classe derivata, GradedActivity la classe base.
-
-I membri private della classe base non possono essere acceduti direttamente 
-dalla classe derivata, ma solo mediante le funzioni membro
-*/
+// La classe FinalExam e' una specializzazione della classe GradedActivity
 
 class FinalExam : public GradedActivity
 {
