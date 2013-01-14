@@ -2,11 +2,16 @@
 #include <cstdlib>
 using namespace std;
 
-/* Una classe base astratta contiene una o piu' funzioni virtuali pure, ed il
-suo scopo primario e' di essere utilizzata come classe base in una gerarchia di
-classi.
 
-La classe Account e' una classe base astratta.*/
+/* Uuna classe base astratta non puo' essere istanziata, tuttavia altre 
+classi derivano da essa; una funzione virtuale pura e' una funzione membro 
+virtuale che non puo' essere sovrascritta (ovverriden); quando una classe 
+contiene una funzione virtuale membro tale classe diventa una classe base 
+astratta; una classe base astratta contiene una o piu' funzioni virtuali pure, 
+il suo scopo primario e' di essere utilizzata come classe base in una gerarchia
+di classi. */
+
+//La classe Account e' una classe base astratta
 class Account
 {
     public:
