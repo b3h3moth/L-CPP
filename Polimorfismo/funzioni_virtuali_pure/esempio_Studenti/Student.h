@@ -24,6 +24,13 @@ class Student
         // Funzione virtuale pura
         virtual int getRemainingHours() const = 0;
 
+        /* Tale funzione naturalmente deve essere sovrascritta nelle classi
+        derivate, tale classe inoltre, avendo una funzione virtuale pura diventa
+        una classe base astratta. 
+        
+        Una classe base astratta e' la classe generica, o di base, da cui altre
+        classi deriveranno; si trova in alto nella gerarchia di classi. */
+
     protected:
         string name;        // Nome dello studente
         string ID_student;  // ID studente
