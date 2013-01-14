@@ -1,14 +1,17 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+/* La classe Student e' la classe base che definisce talune informazioni su uno
+studente. */
+
 class Student
 {
     public:
         // Costruttore di default
-        Student() { name = "", id = "", year_admitted = 0; }
+        Student() { name = "", ID_student = "", year_admitted = 0; }
 
         // Costruttore
-        Student(string n, string id, year) { set(n, id, year); }
+        Student(string n, string id, int year) { set(n, id, year); }
 
         // Funzione per il settaggio degli attributi dello studente
         void set(string n, string id, int year) {
