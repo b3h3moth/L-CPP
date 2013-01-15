@@ -2,6 +2,18 @@
 #include <string>
 using namespace std;
 
+/* Template di funzione e template di classe permettono di sviluppare secondo i
+canoni della programmazione generica, ovvero e' possibile ad esempio scrivere
+funzioni e classi generiche che si possono adattare ai diversi tipi di dato. 
+
+La sintassi del template prevede l'uso della parola chiave 'template' seguita,
+tra parentesi angolari, dalla lista dei parametri formali del template stesso; 
+ciascun parametro formale deve essere preceduto o dalla parola chiave 'class'
+o dalla parola chiave 'typename':
+
+template<typename T>
+template<class element_type>
+*/
 class BasicClass {
     public:
 	BasicClass (const string &str) : name(str) {}
@@ -10,6 +22,7 @@ class BasicClass {
     	string name;
 };
 
+/* Nel caso specifico si crea un template per lo swap di due tipi di dato */
 template <class T>
 void swap_func(T& x, T& y) {
     T temp = x;
@@ -27,7 +40,7 @@ int main() {
 
     swap_func(object1, object2);
     swap_func(int1, int2);
-    swap_func(flo1, flo2);
+    swap_func(o1, flo2);
     swap_func(doub1, doub2);
     swap_func(char1, char2);
 
@@ -37,7 +50,7 @@ int main() {
 
     cout << int1 << " - " << int2 << endl;
     cout << flo1 << " - " << flo2 << endl;
-    cout << doub1 << " - " << doub2 << endl;
+    cout << doub 1 << " - " << doub2 << endl;
     cout << char1 << " - " << char2 << endl;
 
    return(0);
