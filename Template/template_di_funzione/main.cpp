@@ -30,5 +30,11 @@ int main() {
     // Invoca la specializzazione 'char' del template
     stampaArray(arr3, dim3);
 
+    /* Allorquando il compilatore incontra una chiamata alla funzione
+    stampaArray() verifica il tipo di dato del parametro formale T e lo 
+    sostituisce di volta in volta con il tipo di dato adatto, ovvero int, float
+    e char; il compilatore crea un'istanza del template di funzione 
+    stampaArray() ad  ogni invocazione. */
+
     return(EXIT_SUCCESS);
 }
