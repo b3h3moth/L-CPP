@@ -13,6 +13,9 @@ o dalla parola chiave 'typename':
 
 template<typename T>
 template<class element_type>
+
+L'utilizzo dei template favorisce il riutilizzo del software; da notare che
+ad ogni invocazione il compilatore ne istanzia una.
 */
 class BasicClass {
     public:
@@ -30,7 +33,7 @@ void swap_func(T& x, T& y) {
     y = temp;
 }
 
-int main() {
+int main(void) {
     BasicClass object1("Antonio");
     BasicClass object2("Salvatore");
     int int1 = 111, int2 = 999;
