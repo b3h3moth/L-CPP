@@ -19,10 +19,10 @@ class Stack.h
         ~Stack() { delete [] stack_; }
 
         // Inserisce un elemento in testa allo stack
-        bool push(const T&);
+        bool push(const T &value);
 
         // Estrae un elemento dalla testa dello stack
-        bool pop(T&);
+        bool pop(T &value);
 
         // Verifica se  lo stack e' vuoto
         bool isEmpty() const { return top == -1; }
