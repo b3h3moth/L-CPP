@@ -9,11 +9,11 @@ Nota: Al posto di T puo' essere adoperato qualsiasi identificatore valido.
 
 Si provvede alla creazione della struttura dati pila/stack (LIFO).*/
 template<typename T>
-class Stack.h
+class Stack
 {
     public:
         // Costruttore di default
-        Stack(int dim = 15);
+        Stack(int dim = default_dim);
 
         // Distruttore
         ~Stack() { delete [] stack_; }
@@ -34,6 +34,39 @@ class Stack.h
         int size;       // Gli elementi dello stack
         int top;        // Elemento in testa allo stack
         T   *stack_;    // Puntatore alla rappresentazione interna dello stack
+        static const int default_dim = 15;
 };
+
+
+// Costruttore di default
+template<typename T>
+Stack<T>::Stack(int dim) : 
+    size(dim > 0 ? dim : default_dim),   // Verifica la dimenzione dello stack
+    top(-1),                    // Inizialmente lo stack e' vuoto
+    stack_(new T[size])         // Memoria per gli elementi dello stack
+{
+}
+
+// Inserimento di un elemento in testa dello stack
+template<typename T>
+bool Stack<T>::push(const T &value)
+{
+    if (!isFull()) {
+        stack_[top++] = value; // Inserimento elemento in testa
+        return true;
+    }
+    return false;
+}
+
+// Estrazione di un elemento dalla testa dello stack
+template<typename T>
+bool Stack<T>::pop(T &value)
+{
+    if (!isEmpty()) {
+        value = stack_[top--];
+        return true;
+    }
+    return false;
+}
 
 #endif
