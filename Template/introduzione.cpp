@@ -15,7 +15,7 @@ template<typename T>
 template<class element_type>
 
 L'utilizzo dei template favorisce il riutilizzo del software; da notare che
-ad ogni invocazione il compilatore ne istanzia una.
+ad ogni invocazione il compilatore ne istanzia uno.
 */
 class BasicClass {
     public:
