@@ -14,8 +14,21 @@ o dalla parola chiave 'typename':
 template<typename T>
 template<class element_type>
 
-L'utilizzo dei template favorisce il riutilizzo del software; da notare che
-ad ogni invocazione il compilatore ne istanzia uno.
+Nota: non e' necessario specificare ne' il  tipo dei parametri ne' il valore di
+      ritorno, ma solo il tipo generico, che nel caso del tempate di funzione e'
+      T.
+
+Nota: L'utilizzo dei template favorisce il riutilizzo del software. 
+
+La creazione di un template non causa l'utilizzo di memoria, cosa che avverra' 
+invece allorquando il compilatore incontrera' una invocazione alla relativa 
+funzione.
+
+Lo scopo nell'utilizzo dei template e' la possibilita' di scrivere un'unica
+funzione che possa lavorare con diversi tipi di dato; il concetto chiave della
+programmazione generica sta proprio in questo.
+
+
 */
 class BasicClass {
     public:
