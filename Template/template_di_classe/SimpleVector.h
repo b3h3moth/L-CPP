@@ -44,6 +44,7 @@ class SimpleVector
 Imposta la grandezza dell'array e alloca la memoria necessaria */
 template<class T>
 SimpleVector<T>::SimpleVector(int size)
+{
     array_size = size;
 
     // Alloca la memoria
@@ -54,7 +55,7 @@ SimpleVector<T>::SimpleVector(int size)
     }
 
     // Inizializza l'array
-    for(int i(0); i<array_size; i++)
+    for(int i=0; i<array_size; i++)
         *(array + i) = 0;
 }
 
@@ -72,7 +73,7 @@ SimpleVector<T>::SimpleVector(const SimpleVector &obj)
         memError();
 
     // Copia gli elementi dell'array obj
-    for (int i(0); i<array_size; i++)
+    for (int i=0; i<array_size; i++)
         *(array + i) = *(obj.array +i);
 }
 
@@ -87,7 +88,8 @@ SimpleVector<T>::~SimpleVector()
 
 /* La funzione memError() visualizza un messaggio di errore e termina il
 programma allorquando l'allocazione della memoria fallisce */
-SimpleVector<T>::memError() 
+template<class T>
+void SimpleVector<T>::memError() 
 {
     cout << "ERRORE: Non e' possibile allocare memoria" << endl;
     exit(EXIT_FAILURE);
@@ -95,7 +97,8 @@ SimpleVector<T>::memError()
 
 /* La funzione subError() visualizza un messaggio di errore e termina il
 programma allorquando subscript dovesse andare fuori dai limiti */
-SimpleVector<T>::subError() 
+template<class T>
+void SimpleVector<T>::subError() 
 {
     cout << "ERRORE: subscript fuori dai limiti" << endl;
     exit(EXIT_FAILURE);
@@ -116,7 +119,7 @@ T SimpleVector<T>::getElement(int sub)
 Ritorna un riferimento all'elemento indicizzato da subscript nell'array,
 l'argomento infatti e' subscript. */
 template<class T>
-T &SimpleVector::operator[](const int &sub)
+T &SimpleVector<T>::operator[](const int &sub)
 {
     if (sub < 0 || sub >= array_size)
         subError();
