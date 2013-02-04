@@ -9,7 +9,7 @@ classe base, tutti i dati membro della classe base che non sono stati ereditati
 dalla classe derivata - ossia tutti i nuovi dati membro della classe derivata -
 andranno persi nell'assegnamento, stesso discorso per le funzioni membro.
 
-Nota: Leteralmente sta per "tagliare a fette", per cui nel caso specifico ad
+Nota: Letteralmente sta per "tagliare a fette", per cui nel caso specifico ad
       essere tagliati fuori sono i dati e le funzioni membro della classe 
       derivata non ereditati dalla classe base.
 
@@ -17,7 +17,6 @@ Il problema non si risolve rendendo semplicemente una funzione membro come
 virtuale, ma piuttosto utilizzando al contempo, oltre alle funzioni virtuali, 
 puntatori e variabili dinamiche.
 */
-
 
 class Animale
 {
