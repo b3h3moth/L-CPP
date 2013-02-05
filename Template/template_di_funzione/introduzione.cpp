@@ -2,6 +2,10 @@
 #include <cstdlib>
 using namespace std;
 
+/* I template di funzione forniscono un meccanismo grazie al quale e' possibile
+preservare la semantica delle definizioni e delle chiamate di funzione senza 
+dover aggirare il controllo rigido dei tipi del C++. */
+
 // Definizione del template di funzione
 template<typename T>
 void stampaArray(const T *array, int count)

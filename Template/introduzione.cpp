@@ -21,14 +21,12 @@ Nota: non e' necessario specificare ne' il  tipo dei parametri ne' il valore di
 Nota: L'utilizzo dei template favorisce il riutilizzo del software. 
 
 La creazione di un template non causa l'utilizzo di memoria, cosa che avverra' 
-invece allorquando il compilatore incontrera' una invocazione alla relativa 
-funzione.
+invece allorquando il compilatore incontrera' una invocazione di chiamata alla
+relativa funzione.
 
 Lo scopo nell'utilizzo dei template e' la possibilita' di scrivere un'unica
 funzione che possa lavorare con diversi tipi di dato; il concetto chiave della
-programmazione generica sta proprio in questo.
-
-
+programmazione generica risiede proprio in questo.
 */
 class BasicClass {
     public:
