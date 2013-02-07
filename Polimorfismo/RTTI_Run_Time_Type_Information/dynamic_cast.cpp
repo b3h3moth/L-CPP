@@ -42,10 +42,18 @@ class Gatto : public Animale
         void costo() { cout << "Il persiano e' un gatto costoso" << endl; }
 };
 
+class Cavallo : public Animale
+{
+    public:
+        void verso() { cout << "Il cavallo nitrisce" << endl; };
+        void manto() { cout << "Furia, cavallo dal manto nero" << endl; }
+};
+
 void TipoDiAnimale(Animale *panimale)
 {
-    Cane *pcane     = dynamic_cast<Cane*>(panimale);
-    Gatto *pgatto    = dynamic_cast<Gatto*>(panimale);
+    Cane *pcane   = dynamic_cast<Cane*>(panimale);
+    Gatto *pgatto = dynamic_cast<Gatto*>(panimale);
+    Cavallo *pcavallo = dynamic_cast<Cavallo*>(panimale);
 
     if (pcane) {
         cout << "Sono un cane" << endl;
@@ -57,7 +65,12 @@ void TipoDiAnimale(Animale *panimale)
         pgatto->costo();
     }
 
-    cout << "Verifica del tipo usando virtual Animale::verso " << endl;
+    if (pcavallo) {
+        cout << "Sono un cavallo" << endl;
+        pcavallo->manto();
+    }
+
+    cout << "Verifica del tipo usando virtual Animale::verso() : ";
     panimale->verso();
 }
 
@@ -65,10 +78,13 @@ void TipoDiAnimale(Animale *panimale)
 int main() {
     Cane cane;
     Gatto gatto;
+    Cavallo cavallo;
 
     TipoDiAnimale(&cane);
     cout << endl;
     TipoDiAnimale(&gatto);
+    cout << endl;
+    TipoDiAnimale(&cavallo);
 
     return(EXIT_SUCCESS);
 }
