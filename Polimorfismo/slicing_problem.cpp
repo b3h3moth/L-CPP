@@ -77,3 +77,6 @@ void Animale::print() const
 {
     cout << " nome (Animale): " << nome << endl;
 }
+
+/* Un modo molto piu' elegante, ma anche decisamente piu' pericoloso, di 
+risolvere lo Slicing problem e' con il downcasting; tecnica RTTI */
