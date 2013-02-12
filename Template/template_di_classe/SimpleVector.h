@@ -16,7 +16,7 @@ class SimpleVector
         SimpleVector() { array = 0; array_size = 0; }
 
         // Costruttore
-        SimpleVector(int sze);
+        SimpleVector(int size);
         
         // Costruttore di copia
         SimpleVector(const SimpleVector &obj);
