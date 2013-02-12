@@ -34,7 +34,7 @@ template<class T>
 int SearchVector<T>::findItem(const T item)
 {
     for (int i=0; i<this->size(); i++) {
-        if (getElement(i) == item)
+        if (SimpleVector<T>::getElement(i) == item)
             return i;
     }
     return -1;
