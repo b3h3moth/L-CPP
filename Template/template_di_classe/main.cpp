@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "SimpleVector.h"
+#include "SearchVector.h"
 
 int main() {
     const int SIZE = 20;        // Numero di elementi
@@ -14,8 +15,6 @@ int main() {
     SimpleVector<int> array_int(SIZE);
     SimpleVector<float> array_flt(SIZE);
     SimpleVector<double> array_dbl(SIZE);
-
-
 
     // Inizializzazione di ciascun array
     for (i=0; i<SIZE; i++) {
