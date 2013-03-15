@@ -15,8 +15,16 @@ class Stack
         // Costruttore di default
         Stack(int dim = default_dim);
 
-        // Distruttore
+        /* Distruttore
+        error: glibc detected ./a.out error free() invalid pointer:
+        considerato l'errore in fase di esecuzione lo si elimina per il 
+        momento.
+
+        Ovviamente l'errore, non in compiazione ma a runtime, dipende dal
+        rilascio della memoria relativa all'array.
+        
         ~Stack() { delete [] stack_; }
+        */
 
         // Inserisce un elemento in testa allo stack
         bool push(const T &value);
