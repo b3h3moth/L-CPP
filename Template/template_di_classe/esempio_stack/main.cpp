@@ -11,12 +11,19 @@ int main() {
 
     cout << "Inserimento elemento di tipo intero nello stack" << endl;
 
+    // Inserisce gli elementi nello stack
     while (int_stack.push(elem_int)) {
         cout << elem_int << ' ';
-        elem_int++;
+        elem_int += 1;
     }
 
     cout << "Stack pieno, push(" << elem_int << ") non eseguibile" << endl;
+
+    // Estrae gli elementi dallo stack
+    while (int_stack.pop(elem_int))
+        cout << elem_int << ' ';
+
+    cout << "stack vuoto " << endl;
 
     return(EXIT_SUCCESS);
 }
