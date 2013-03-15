@@ -49,10 +49,10 @@ Stack<T>::Stack(int dim) :
 
 // Inserimento di un elemento in testa dello stack
 template<typename T>
-bool Stack<T>::push(const T &value)
+bool Stack<T>::push(const T &push_value)
 {
     if (!isFull()) {
-        stack_[top++] = value; // Inserimento elemento in testa
+        stack_[top++] = push_value; // Inserimento elemento in testa
         return true;
     }
     return false;
@@ -60,10 +60,10 @@ bool Stack<T>::push(const T &value)
 
 // Estrazione di un elemento dalla testa dello stack
 template<typename T>
-bool Stack<T>::pop(T &value)
+bool Stack<T>::pop(T &pop_value)
 {
     if (!isEmpty()) {
-        value = stack_[top--];
+        pop_value = stack_[top--];
         return true;
     }
     return false;
