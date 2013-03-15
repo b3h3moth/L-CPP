@@ -1,5 +1,6 @@
 /* Si implementa l'ereditarieta' mediante template; la classe SearchVector e'
-una classe derivata da SimpleVector */
+una classe derivata da SimpleVector, se ne deduce che un  template di classe
+puo' derivare da un alro template di classe. */
 
 #ifndef SEARCHVECTOR_H
 #define SEARCHVECTOR_H
