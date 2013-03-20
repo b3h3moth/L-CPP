@@ -13,7 +13,7 @@ int main() {
     obj.system_Info();
 
     /* La classe Unix prevede 3 attributi, all'oggetto tuttavia sono stati
-    forniti sono due parametri, il terzo sara' fornito di un valore nullo. */
+    forniti solo due parametri, il terzo sara' fornito di un valore nullo. */
     obj2.system_Info();
 
     /* Si alloca un nuovo oggetto e lo si assegna ad un puntatore, su di esso 
