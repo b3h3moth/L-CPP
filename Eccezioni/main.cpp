@@ -15,8 +15,10 @@ int main() {
     while (cin >> num1 >> num2) {
         
         /* Il blocco try, all'interno del quale l'eccezione si puo' verificare o
-        meno; quando si verifica un'eccezione all'interno di tale blocco, essa
-        sara' intercettata dal gestore delle eccezioni catch(). */
+        meno. Se durante l'esecuzione di una istruzione si dovesse verificare 
+        un'eccezione, l'esecuzione del blocco terminera' immediatamente, 
+        trasferendo il controllo al primo gestore delle eccezioni (catch) che 
+        potra' elaborarla. */
         try {
             risultato = quoziente(num1, num2);
             cout << "Risultato: " << risultato << endl;
@@ -24,10 +26,15 @@ int main() {
 
         /* catch() si occupa invece della effettiva cattura e gestione 
         dell'eccezione, specificando tra parentesi un unico parametro che indica
-        il tipo di eccezione da elaborare. */
+        il tipo di eccezione da elaborare; pertanto l'opportuno gestore delle
+        eccezioni viene scelto confrontando il parametro di catch con il tipo
+        dell'eccezione. */
         catch (DivisioneZero &DivisioneZero) {
             cout << "Eccezione: " << DivisioneZero.what() << endl;
         }
+
+        /* conclusa l'eccezione il controllo torna alla prima istruzione 
+        successiva al gestore catch. */
         
         cout << "Inserire due numeri interi (^C quit): ";
     }
