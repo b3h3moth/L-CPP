@@ -50,7 +50,7 @@ int main() {
 lancio dell'eccezione. */
 double quoziente(int numeratore, int denominatore)
 {
-    // Lancia una eccezione DivisioneZero se si tenta di dividere per 0
+    // throw lancia una eccezione DivisioneZero se si tenta di dividere per 0
     if (denominatore == 0)
         throw DivisioneZero();
 
