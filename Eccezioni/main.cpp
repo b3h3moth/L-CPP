@@ -34,8 +34,9 @@ int main() {
             cout << "Eccezione: " << DivisioneZero.what() << endl;
         }
 
-        /* conclusa l'eccezione il controllo torna alla prima istruzione 
-        successiva al gestore catch. */
+        /* modello di gestione delle eccezioni con terminazione, vale a dire che
+        conclusa l'eccezione il controllo tornera' alla prima istruzione 
+        successiva al gestore catch, */
         
         cout << "Inserire due numeri interi (^C quit): ";
     }
