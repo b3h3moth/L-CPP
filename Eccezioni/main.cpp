@@ -19,7 +19,8 @@ int main() {
         un'eccezione, l'esecuzione del blocco terminera' immediatamente, 
         trasferendo il controllo al primo gestore delle eccezioni (catch) che 
         potra' elaborarla. */
-        try {
+        try { 
+            // Punto di lancio, dove si verifica l'eccezione
             risultato = quoziente(num1, num2);
             cout << "Risultato: " << risultato << endl;
         }
