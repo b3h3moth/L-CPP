@@ -36,7 +36,7 @@ int main() {
 
         /* modello di gestione delle eccezioni con terminazione, vale a dire che
         conclusa l'eccezione il controllo tornera' alla prima istruzione 
-        successiva al gestore catch, */
+        successiva al gestore catch. */
         
         cout << "Inserire due numeri interi (^C quit): ";
     }
@@ -50,8 +50,11 @@ int main() {
 lancio dell'eccezione. */
 double quoziente(int numeratore, int denominatore)
 {
-    // throw lancia una eccezione DivisioneZero se si tenta di dividere per 0
     if (denominatore == 0)
+        /* throw lancia una eccezione DivisioneZero se si tenta di dividere 
+        per 0. L'operando di throw e' un oggetto che sara' utilizzato per 
+        l'inizializzazione del parametro di catch; l'esecuzione della funzione 
+        quoziente terminera' in questo punto. */
         throw DivisioneZero();
 
     // Restituisce il risultato della divisione, se tutto procede correttamente
