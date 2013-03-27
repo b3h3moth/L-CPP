@@ -22,7 +22,7 @@ class DivisioneZero : public runtime_error
 {
     public:
         // Il costruttore si occupa della definizione del messaggio d'errore
-        DivisioneZero() : runtime_error("Attenzione, si sta dividendo per 0") {}
+        DivisioneZero() : runtime_error("Divisione per 0") {}
 };
 
 #endif
