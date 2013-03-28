@@ -14,7 +14,7 @@ int main() {
     try {
         divisizione = divisione_zero(n_num, n_den);
         cout << "divisione: " << divisizione << endl;
-    } catch (string excstring) {
+    } catch (string excstring) // Gestore delle eccezioni catch { 
         cout << excstring << endl;
     }
 
