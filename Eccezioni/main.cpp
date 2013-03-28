@@ -20,7 +20,6 @@ int main() {
         trasferendo il controllo al primo gestore delle eccezioni (catch) che 
         potra' elaborarla. */
         try { 
-            // Punto di lancio, dove si verifica l'eccezione
             risultato = quoziente(num1, num2);
             cout << "Risultato: " << risultato << endl;
         }
@@ -55,7 +54,7 @@ double quoziente(int numeratore, int denominatore)
         per 0. L'operando di throw e' un oggetto che sara' utilizzato per 
         l'inizializzazione del parametro di catch; l'esecuzione della funzione 
         quoziente terminera' in questo punto. */
-        throw DivisioneZero();
+        throw "Err: divisione per zero\n"; // Punto di lancio (throw point)
 
     // Restituisce il risultato della divisione, se tutto procede correttamente
     return static_cast<double>(numeratore) / denominatore;
