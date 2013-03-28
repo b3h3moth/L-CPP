@@ -37,6 +37,10 @@ void throwEccezione()
         messaggio di errore, dopodiche' rilancia l'eccezione */
         cout << "Gestore eccezioni nella funzione throwEccezione()" << endl;
 
+        /* Ci sono casi in cui il gestore delle eccezioni puo' decidere di non
+        essere in grado di elaborare l'eccezione o di volerla elaborare solo
+        in parte, in tali casi il gestore delle eccezioni puo' demandare 
+        l'elaborazione dell'eccezione stessa a un altro gestore. */
         throw; // L'eccezione viene rilanciata 
     }
 }
