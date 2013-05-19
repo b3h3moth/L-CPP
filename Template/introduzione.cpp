@@ -36,7 +36,8 @@ class BasicClass {
     	string name;
 };
 
-/* Nel caso specifico si crea un template per lo swap di due tipi di dato */
+/* Nel caso specifico si crea un template per lo gestire lo swap di due tipi 
+ * di dato */
 template <class T>
 void swap_func(T& x, T& y) {
     T temp = x;
