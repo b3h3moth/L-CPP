@@ -10,7 +10,7 @@ i file, definisce peraltro i tipi di dato:
 - fstream, file stream; apre un file per lettura, scrittura o entrambi.
 
 Nota: per poter lavorare coi file deve essere prima di tutto definito un oggetto
-di uno dei tre tipi.
+di uno dei tre tipi e linkato
 */
 
 
@@ -20,7 +20,9 @@ int main() {
     char surname[10];
 
     // Si crea un file all'interno del quale scrivere dei dati.
-    ofstream out_file("db.txt", ios::out);
+    ofstream out_file;
+    out_file.open("db.txt");
+    // Equivalente: ofstream out_file("db.txt");
 
     // Si verifica l'assenza di errori
     if (!out_file) {
@@ -34,6 +36,8 @@ int main() {
         out_file << name << ' ' << surname << ' ' << age << endl;
         cout << "; ";
     }
+    
+    out_file.close();
 
     return(EXIT_SUCCESS);
 }
