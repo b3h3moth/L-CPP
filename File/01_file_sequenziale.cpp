@@ -39,6 +39,7 @@ int main() {
     // Si scrive dopo aver ricevuto dati in input
     out_file << name << endl;
     
+    // Si chiude lo strem
     out_file.close();
 
     return(EXIT_SUCCESS);
