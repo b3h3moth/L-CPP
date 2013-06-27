@@ -17,7 +17,7 @@ di uno dei tre tipi e linkato
 int main() {
     int age;
     char name[10];
-    char surname[10];
+    const string lang = "C++";
 
     // Si crea un file all'interno del quale scrivere dei dati.
     ofstream out_file;
@@ -30,12 +30,14 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    cout << "nome, cognome, eta': " << endl;
+    // Si scrive sul file utilizzando l'operatore di inserimento
+    out_file << lang << " language programming, file" << endl;
 
-    while (cin >> name >> surname >> age) {
-        out_file << name << ' ' << surname << ' ' << age << endl;
-        cout << "; ";
-    }
+    cout << "nome: " ;
+    cin >> name;
+
+    // Si scrive dopo aver ricevuto dati in input
+    out_file << name << endl;
     
     out_file.close();
 
