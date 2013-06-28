@@ -10,7 +10,7 @@ i file, definisce peraltro i tipi di dato:
 - fstream, file stream; apre un file per lettura, scrittura o entrambi.
 
 Nota: per poter lavorare coi file deve essere prima di tutto definito un oggetto
-di uno dei tre tipi e linkato
+di uno dei tre tipi e linkato al file.
 */
 
 
