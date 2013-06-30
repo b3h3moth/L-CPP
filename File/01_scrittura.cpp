@@ -3,8 +3,8 @@
 #include <fstream>
 using namespace std;
 
-/* L'header <fstream> contiene tutte le dichirazioni necessarie per lavorare con
-i file, definisce peraltro i tipi di dato: 
+/* L'header <fstream> contiene tutte le dichiarazioni necessarie per lavorare 
+con i file, definisce peraltro i tipi di dato: 
 - ifstream, input file stream, apre un file esistente e legge il contenuto;
 - ofstream, output file stream, crea un file in cui scrivere; 
 - fstream, file stream; apre un file per lettura, scrittura o entrambi.
