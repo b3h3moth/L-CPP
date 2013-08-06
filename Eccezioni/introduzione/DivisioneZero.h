@@ -10,8 +10,8 @@ si occupa della gestione dell'eccezione.
 
 La classe runtime_error della libreria standard e' una specializzazione della 
 classe exception, si occupa della gestione degli errori a runtime (tempo di 
-esecuzione), mentre la classe DivisioneZero e' a sua volta una specializzazione
-della classe runtime_error.
+esecuzione), mentre la classe DivisioneZero e' a sua volta derivata dalla classe
+runtime_error.
 
 La classe exception e' la classe base, o superclasse, delle eccezioni in C++,
 l'header di riferimento e' <stdexcept>.
