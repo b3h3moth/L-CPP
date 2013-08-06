@@ -20,7 +20,7 @@ class Stack
         considerato l'errore in fase di esecuzione lo si elimina per il 
         momento.
 
-        Ovviamente l'errore, non in compiazione ma a runtime, dipende dal
+        Ovviamente l'errore, non in compilazione ma a runtime, dipende dal
         rilascio della memoria relativa all'array.
         
         ~Stack() { delete [] stack_; }
