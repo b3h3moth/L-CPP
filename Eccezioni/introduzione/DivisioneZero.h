@@ -21,7 +21,9 @@ l'header di riferimento e' <stdexcept>.
 class DivisioneZero : public runtime_error
 {
     public:
-        // Il costruttore si occupa della definizione del messaggio d'errore
+        /* Il costruttore si occupa della definizione del messaggio d'errore;
+        nello specifico invia tale messaggio al costruttore della classe 
+        runtime_error. */
         DivisioneZero() : runtime_error("Divisione per 0") {}
 };
 
