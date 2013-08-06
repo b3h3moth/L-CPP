@@ -29,7 +29,7 @@ double divisione_zero(int num, int den)
     parametro di throw viene utilizzato per individuare il tipo di eccezione.
     */
     if (den == 0) {
-        string excstr = "Divisione per zero";
+        string excstr = "Err: Divisione per zero";
         throw excstr; // Punto di lancio (throw point)
     }
 
