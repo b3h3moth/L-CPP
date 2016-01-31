@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -55,6 +56,5 @@ int main() {
 			<< "\n6 " << setw(13) << frequency6 << endl;
 
 	
-	return(0);
+	return(EXIT_SUCCESS);
 }
-
