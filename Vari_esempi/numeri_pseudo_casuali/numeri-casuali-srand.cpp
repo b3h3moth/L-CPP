@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -26,8 +27,6 @@ int main() {
 		if (counter % 5 == 0)
 			cout << endl;
 	}
-
 	
-	return(0);
+	return(EXIT_SUCCESS);
 }
-
